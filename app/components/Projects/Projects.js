@@ -193,8 +193,12 @@ const Projects = () => {
     return (
         <div className='projectsContainer'>
             <div className='projectDisplay'>
-                <Image className='projectImage' layout='responsive' width={500} height={500} src={projects[index].gif} />
-                <Image className='laptop' layout='responsive' width={500} height={500} src='/img/laptop.png' />
+                <div className='projectImage'>
+                    <Image layout='responsive' width={100} height={100} src={projects[index].gif} />
+                </div>
+                <div className='projectImage'>
+                    <Image layout='responsive' width={100} height={100} src='/img/laptop.png' />
+                </div>
             </div>
             <div className='projectDetails'>
                 <div className='projectsNav'>

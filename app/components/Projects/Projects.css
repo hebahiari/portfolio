@@ -1,9 +1,11 @@
 .projectsContainer{
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     gap: 40px;
     width: 100%;
+    z-index: 2;
+    max-width: 1500px;
 }
 
 .projectDisplay{
@@ -13,13 +15,11 @@
 
 .projectImage{
     position: absolute;
-    scale: 75%;
-    z-index: 2;
+    top: 0;
 }
 
-.laptop{
-    position: absolute;
-    z-index: 3;
+.scaled{
+scale: 70%;
 }
 
 .projectDetails{
