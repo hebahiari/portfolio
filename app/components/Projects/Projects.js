@@ -1,8 +1,11 @@
+'use client'
+
 import Link from 'next/link'
 import './Projects.css'
 import { FiGithub } from "react-icons/fi";
 import { IoMdLink } from "react-icons/io";
 import Image from 'next/image';
+import { useState } from 'react';
 
 const projects = [
     {
@@ -169,7 +172,23 @@ const projects = [
 
 const Projects = () => {
 
-    let index = 0
+    const [index, setIndex] = useState(0)
+
+    const prevProject = () => {
+        if (index == 0) {
+            setIndex(projects.length - 1)
+        } else {
+            setIndex((current) => current - 1)
+        }
+    }
+
+    const nextProject = () => {
+        if (index == projects.length - 1) {
+            setIndex(0)
+        } else {
+            setIndex((current) => current + 1)
+        }
+    }
 
     return (
         <div className='projectsContainer'>
@@ -177,9 +196,23 @@ const Projects = () => {
                 <Image width={500} height={500} src='/imgs/laptop.png' />
             </div>
             <div className='projectDetails'>
-                <div className='projectsIndex'>
-                    {index}/{projects.length}
+                <div className='projectsNav'>
+                    <div className='projectsIndex'>
+                        <button onClick={() => prevProject}>
+                            &#60;
+                        </button>
+
+                    </div>
+                    <div className='projectsIndex'>
+                        {index + 1} / {projects.length}
+                    </div>
+                    <div className='projectsIndex'>
+                        <button onClick={nextProject}>
+                            &#62;
+                        </button>
+                    </div>
                 </div>
+
                 <div className='projectDesc'>
                     <h3 className='projectTitle yellow'>
                         {projects[index].name}

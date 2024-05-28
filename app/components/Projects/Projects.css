@@ -1,8 +1,32 @@
 .projectsContainer{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     gap: 40px;
+    width: 100%;
+}
+
+.projectDetails{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    width: 60%;
+}
+
+.projectsNav{
+    display: flex;
+    gap: 10px;
+}
+
+.projectsIndex{
+    padding: 7px;
+    border: 1px solid beige;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .projectDesc{
@@ -12,11 +36,13 @@
     gap: 20px;
     padding: 20px;
     border-radius: 20px;
+    width: 100%;
 }
 
 .projectTags {
     display: flex;
-    gap: 10px
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 .projectTag{

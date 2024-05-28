@@ -32,6 +32,12 @@ body {
   z-index: 2;
 }
 
+button {
+  border: none;
+  background-color: transparent;
+  color: inherit;
+}
+
 /* font colors */
 .lightblue{
   color: #9cdbfd
