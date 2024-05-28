@@ -6,13 +6,29 @@
     width: 100%;
 }
 
+.projectDisplay{
+    flex: 1;
+    position: relative;
+}
+
+.projectImage{
+    position: absolute;
+    scale: 75%;
+    z-index: 2;
+}
+
+.laptop{
+    position: absolute;
+    z-index: 3;
+}
+
 .projectDetails{
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     gap: 20px;
-    width: 60%;
 }
 
 .projectsNav{
@@ -65,3 +81,4 @@
     justify-content: center;
     align-items: center;
 }
+
