@@ -27,3 +27,23 @@ a {
 body {
   font-family: 'Cascadia Code', monospace;
 }
+
+.lightblue{
+  color: #9cdbfd
+}
+
+.white{
+  color: white
+}
+
+.orange{
+  color: #ce9178 
+}
+
+.darkblue{
+  color: #569cd6;
+}
+
+.yellow{
+  color: #c8a405;
+}
