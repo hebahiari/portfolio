@@ -1,6 +1,5 @@
 'use client'
 
-import Link from 'next/link'
 import './Projects.css'
 import { FiGithub } from "react-icons/fi";
 import { IoMdLink } from "react-icons/io";
@@ -191,36 +190,35 @@ const Projects = () => {
     }
 
     return (
-        <div className='projectsContainer'>
+        <div className='projectsContainer' id='projects'>
             <div className='projectDisplay'>
-                <div className='projectImage'>
-                    <Image className='scaled' layout='responsive' width={100} height={100} src={projects[index].gif} />
-                </div>
-                <div className='projectImage'>
-                    <Image layout='responsive' width={100} height={100} src='/img/laptop.png' />
-                </div>
+                <a href={projects[index].links[1]} target='_blank'>
+                    <div className='projectImage'>
+                        <Image className='scaled' layout='responsive' width={100} height={100} src={projects[index].gif} />
+                    </div>
+                    <div className='projectImage'>
+                        <Image layout='responsive' width={100} height={100} src='/img/laptop.png' />
+                    </div>
+                </a>
             </div>
             <div className='projectDetails'>
                 <div className='projectsNav'>
-                    <div className='projectsIndex'>
-                        <button onClick={() => prevProject}>
-                            &#60;
-                        </button>
-
-                    </div>
+                    <button className='projectsIndex projectIndexArrow' onClick={prevProject}>
+                        &#60;
+                    </button>
                     <div className='projectsIndex'>
                         {index + 1} / {projects.length}
                     </div>
-                    <div className='projectsIndex'>
-                        <button onClick={nextProject}>
-                            &#62;
-                        </button>
-                    </div>
+                    <button className='projectsIndex projectIndexArrow' onClick={nextProject}>
+                        &#62;
+                    </button>
                 </div>
 
                 <div className='projectDesc'>
                     <h3 className='projectTitle yellow'>
-                        {projects[index].name}
+                        <a href={projects[index].links[1]} target='_blank'>
+                            {projects[index].name}
+                        </a>
                     </h3>
                     <div className='projectInfo'>
                         {projects[index].desc}
@@ -229,12 +227,12 @@ const Projects = () => {
                         {projects[index].tags.map((tag, index) => <div key={index} className='projectTag'>{tag}</div>)}
                     </div>
                     <div className='projectLinks'>
-                        <Link href={projects[index].links[0]} className='projectLink'>
+                        <a href={projects[index].links[0]} className='projectLink' target='_blank'>
                             <FiGithub />
-                        </Link>
-                        <Link href={projects[index].links[1]} className='projectLink'>
+                        </a>
+                        <a href={projects[index].links[1]} className='projectLink' target='_blank'>
                             <IoMdLink />
-                        </Link>
+                        </a>
                     </div>
                 </div>
             </div>

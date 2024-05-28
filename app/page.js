@@ -16,10 +16,10 @@ export default function Home() {
         <Navbar />
         <Hero />
         <About />
-        <Projects id='projects' />
+        <Projects />
         <Contact />
-        <Footer />
       </main>
+      <Footer />
     </>
   );
 }
