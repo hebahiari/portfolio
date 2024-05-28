@@ -1,0 +1,25 @@
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(240, 248, 255, 0.068);
+    width: 100%;
+    max-width: 1500px;
+    border-radius: 35px;
+    padding: 20px 40px;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.054), 
+    0 1px 3px rgba(0, 0, 0, 0.031); */
+    position: sticky;
+    top: 40px
+}
+
+.title{
+    color: #9cdbfd
+}
+
+.links {
+    display: flex;
+    gap: 20px;
+    color: #e2c08d;
+}
