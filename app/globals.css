@@ -28,6 +28,11 @@ body {
   font-family: 'Cascadia Code', monospace;
 }
 
+.main{
+  z-index: 2;
+}
+
+/* font colors */
 .lightblue{
   color: #9cdbfd
 }
@@ -46,4 +51,8 @@ body {
 
 .yellow{
   color: #c8a405;
+}
+
+.purple{
+  color: #c586c0
 }

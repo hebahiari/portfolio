@@ -1,0 +1,41 @@
+.projectsContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.projectDesc{
+    border: 1px solid beige;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.projectTags {
+    display: flex;
+    gap: 10px
+}
+
+.projectTag{
+    background-color: rgb(20, 1, 48);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.projectLinks{
+    display: flex;
+    gap: 10px;
+}
+
+.projectLink{
+    border: 1px solid white;
+    border-radius: 50px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

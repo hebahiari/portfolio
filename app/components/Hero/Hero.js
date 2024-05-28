@@ -19,7 +19,7 @@ const Hero = () => {
                     <div className='darkblue'>&#60;/h1&#62;</div>
                 </div>
                 <div>
-                    <span className='darkblue'>&#60;h1</span>
+                    <span className='darkblue'>&#60;h2</span>
                     <span className='lightblue'> classname</span>
                     <span className='white'>=</span>
                     <span className='orange'>'developer'</span>
@@ -29,7 +29,7 @@ const Hero = () => {
                             Heba A.
                         </h2>
                     </div>
-                    <div className='darkblue'>&#60;/h1&#62;</div>
+                    <div className='darkblue'>&#60;/h2&#62;</div>
                 </div>
 
             </div>

@@ -10,14 +10,16 @@ import Background from "./components/Background/Background";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
+    <>
       <Background />
-      <Navbar />
-      <Hero />
-      <About />
-      <Projects />
-      <Contact />
-      <Footer />
-    </main>
+      <main className={styles.main}>
+        <Navbar />
+        <Hero />
+        <About />
+        <Projects />
+        <Contact />
+        <Footer />
+      </main>
+    </>
   );
 }

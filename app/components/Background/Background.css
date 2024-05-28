@@ -10,6 +10,7 @@
   
   .gradient {
     opacity: 70%;
+    z-index: 1;
     --size: 750px;
     --speed: 50s;
     --easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
