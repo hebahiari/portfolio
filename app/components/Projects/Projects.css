@@ -6,6 +6,7 @@
     width: 100%;
     z-index: 2;
     max-width: 1500px;
+    height: 100vh;
 }
 
 .projectDisplay{
@@ -15,11 +16,14 @@
 
 .projectImage{
     position: absolute;
-    top: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
 }
 
 .scaled{
-scale: 70%;
+scale: 73%;
 }
 
 .projectDetails{

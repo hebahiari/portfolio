@@ -194,7 +194,7 @@ const Projects = () => {
         <div className='projectsContainer'>
             <div className='projectDisplay'>
                 <div className='projectImage'>
-                    <Image layout='responsive' width={100} height={100} src={projects[index].gif} />
+                    <Image className='scaled' layout='responsive' width={100} height={100} src={projects[index].gif} />
                 </div>
                 <div className='projectImage'>
                     <Image layout='responsive' width={100} height={100} src='/img/laptop.png' />
