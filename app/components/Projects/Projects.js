@@ -8,26 +8,6 @@ import { useState } from 'react';
 
 const projects = [
     {
-        name: "IssueTracker",
-        type: "(Issue Tracker website)",
-        desc: [
-            "Add, Update and Delete issues",
-            "Assign issues to different users",
-            'Login/Logout using Google Auth',
-            'Filter/Sort issues by name, date and status',
-            "Add comments to issues",
-            "Dashboard displaying a summary of existing Issues"
-        ],
-        tags: ["Next.js", "TypeScript", "Prisma", "Radix UI"],
-        image: "/img/portfolio/10.png",
-        gif: "/img/portfolio/gifs/issuetracker.gif",
-        links: [
-            "https://github.com/hebahiari/issue-tracker",
-            "https://issuetracker.hebahiari.com/",
-        ],
-    },
-
-    {
         name: "Petsgram",
         type: "(Social media website)",
 
@@ -46,6 +26,26 @@ const projects = [
         links: [
             "https://github.com/hebahiari/petsgram",
             "https://petsgram.hebahiari.com/",
+        ],
+    },
+
+    {
+        name: "IssueTracker",
+        type: "(Issue Tracker website)",
+        desc: [
+            "Add, Update and Delete issues",
+            "Assign issues to different users",
+            'Login/Logout using Google Auth',
+            'Filter/Sort issues by name, date and status',
+            "Add comments to issues",
+            "Dashboard displaying a summary of existing Issues"
+        ],
+        tags: ["Next.js", "TypeScript", "Prisma", "Radix UI"],
+        image: "/img/portfolio/10.png",
+        gif: "/img/portfolio/gifs/issuetracker.gif",
+        links: [
+            "https://github.com/hebahiari/issue-tracker",
+            "https://issuetracker.hebahiari.com/",
         ],
     },
 

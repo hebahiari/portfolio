@@ -1,5 +1,6 @@
 import './About.css'
-import { FaFilePdf, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaRegFilePdf } from "react-icons/fa6";
 import Image from 'next/image';
 import AboutStack from './AboutStack';
 import TypeWriter from './TypeWriter';
@@ -13,7 +14,7 @@ const About = () => {
                     <a href='https://github.com/hebahiari' target='_blank'><FaGithub /></a>
                     <a href='https://www.linkedin.com/in/hebadev/' target='_blank'><FaLinkedin /></a>
                     <a href='https://www.instagram.com/capturingflow/' target='_blank'><FaInstagram /></a>
-                    <a href='https://www.instagram.com/capturingflow/' target='_blank'><FaFilePdf /></a>
+                    <a href='https://www.instagram.com/capturingflow/' target='_blank'><FaRegFilePdf /></a>
 
                 </div>
                 <div className='aboutDesc cardBorder'>
