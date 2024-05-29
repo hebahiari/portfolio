@@ -1,0 +1,16 @@
+.tilt-container {
+    perspective: 1000px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tilt-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    padding: 0 500px;
+    transition: transform 0.1s ease;
+}

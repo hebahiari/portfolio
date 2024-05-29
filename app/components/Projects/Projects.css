@@ -6,7 +6,7 @@
     width: 100%;
     z-index: 2;
     max-width: 1500px;
-    height: 100vh;
+    min-height: 100vh;
     flex-wrap: wrap;
 }
 
@@ -76,6 +76,11 @@ scale: 73%;
     &:hover{
         background-color: rgba(250, 235, 215, 0.178);
     }
+}
+
+.projectTitle{
+    font-size: xx-large;
+    font-weight: bolder;
 }
 
 .projectTags {
