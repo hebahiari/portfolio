@@ -6,6 +6,7 @@ const Background = () => {
             <div class="gradient one"></div>
             <div class="gradient two"></div>
             <div class="gradient three"></div>
+            <div className='backdrop'></div>
         </div>
     )
 }

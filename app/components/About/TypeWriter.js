@@ -6,10 +6,12 @@ import React from 'react'
 const TypeWriter = () => {
     return (
         <Typewriter words={[
-            "Full Stack Engineer 👩‍💻",
-            "Designer 👩‍🎨",
+            "Software Engineer 👩‍💻",
+            "Designer 🎨",
             "Bug Destroyer 🪲❌",
-            "Web Developer 👩‍🎤"
+            "Web Developer 👩‍🎤",
+            "Div Centerer 🔷",
+            "API Request Police 🚓",
         ]}
             loop={true}
         />

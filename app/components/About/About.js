@@ -18,8 +18,8 @@ const About = () => {
 
                 </div>
                 <div className='aboutDesc cardBorder'>
-                    <div className='yellow' style={{ fontSize: 'larger' }}>Hello!</div>
-                    <div className='lightblue' style={{ fontSize: 'x-large' }}>I'm Heba</div>
+                    <div className='yellow' style={{ fontSize: 'larger' }}>Hello,</div>
+                    <div className='lightblue' style={{ fontSize: 'x-large' }}>I'm Heba!</div>
                     <div className='orange'>Im a <TypeWriter /></div>
                     <div>Fullstack engineer with a focus on developing and implementing web-based solutions, maintaining and updating web applications, and improving the user experience.</div>
 

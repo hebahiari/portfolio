@@ -7,7 +7,7 @@ const Hero = () => {
             <div className='tab'>
                 <div>
                     <span className='darkblue'>&#60;h1</span>
-                    <span className='lightblue'> classname</span>
+                    <span className='lightblue'> className</span>
                     <span className='white'>=</span>
                     <span className='orange'>'title'</span>
                     &#62;
@@ -20,7 +20,7 @@ const Hero = () => {
                 </div>
                 <div>
                     <span className='darkblue'>&#60;h2</span>
-                    <span className='lightblue'> classname</span>
+                    <span className='lightblue'> className</span>
                     <span className='white'>=</span>
                     <span className='orange'>'developer'</span>
                     &#62;
