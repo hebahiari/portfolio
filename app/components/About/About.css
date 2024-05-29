@@ -11,10 +11,10 @@
 .aboutRight{
 }
 
-.aboutLeft {
-    border: 2px;
+.aboutStack{
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
     gap: 20px;
     flex-wrap: wrap;
     padding: 20px;
@@ -24,6 +24,25 @@
     &:hover{
         background-color: rgba(250, 235, 215, 0.178);
     }
+}
+
+.stackTitle{
+    font-size: x-large;
+}
+
+.aboutLeft {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.aboutLine{
+    height: 130px;
+    width: 1px;
+    background-color: antiquewhite;
+    margin: 0 20px;
 }
 
 .aboutRow {
@@ -45,4 +64,10 @@
     height: 30px;
     width: 30px;
     border-radius: 50px;
+}
+
+.aboutStackFooter{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
 }
