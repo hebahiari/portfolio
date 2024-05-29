@@ -1,0 +1,48 @@
+.aboutContainer{
+    max-width: 1500px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    z-index: 2;
+}
+
+.aboutRight{
+}
+
+.aboutLeft {
+    border: 2px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+    border-radius: 20px;
+    width: 100%;
+    border: 1px solid beige;
+    &:hover{
+        background-color: rgba(250, 235, 215, 0.178);
+    }
+}
+
+.aboutRow {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px
+}
+
+.aboutItem {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+.aboutIcon {
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+}
