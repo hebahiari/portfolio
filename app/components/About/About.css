@@ -6,9 +6,43 @@
     align-items: center;
     min-height: 100vh;
     z-index: 2;
+    gap: 20px
 }
 
-.aboutRight{
+.aboutTop{
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+    height: 250px;  
+    gap: 20px
+}
+
+.aboutLinks{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.aboutLinks a{
+    font-size: 20px;
+}
+
+.aboutDesc{
+    height: 100%;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 8px;
+}
+
+.aboutImg{
+    padding: 0;
+    overflow: hidden;
+    width: 250px;
 }
 
 .aboutStack{

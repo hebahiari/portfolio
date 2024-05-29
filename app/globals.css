@@ -39,6 +39,15 @@ button {
   color: inherit;
 }
 
+.cardBorder{
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid beige;
+  &:hover{
+      background-color: rgba(250, 235, 215, 0.178);
+}
+}
+
 /* font colors */
 .lightblue{
   color: #9cdbfd
@@ -67,3 +76,4 @@ button {
 .green{
   color:#4ec9b0
 }
+
