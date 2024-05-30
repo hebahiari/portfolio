@@ -32,7 +32,7 @@
 
 @media (min-width: 800px) {
     .hero {
-        scale: 150%;
+        scale: 200%;
         height: calc(100vh - 150px);
         margin: 0;
     }

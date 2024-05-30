@@ -16,7 +16,7 @@
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
-    max-width: 1500px;
+    max-width: 1000px;
     gap: 20px;
     text-align: center;
 }
