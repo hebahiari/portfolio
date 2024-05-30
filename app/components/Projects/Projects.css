@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     gap: 20px;
     width: 100%;
     z-index: 2;
@@ -13,8 +14,9 @@
 .projectDisplay{
     flex: 1;
     position: relative;
-    min-width: 400px;
-    min-height: 400px;
+    width: 100%;
+    min-width: 300px;
+    min-height: calc(100vw / 2);
 }
 
 .projectImage{
@@ -37,7 +39,6 @@ margin-top: -12px;
     justify-content: flex-start;
     align-items: center;
     gap: 20px;
-    min-width: 400px;
 }
 
 .projectsNav{
@@ -112,6 +113,23 @@ margin-top: -12px;
 
     &:hover{
         background-color: rgba(250, 235, 215, 0.411);
+    }
+}
+
+
+
+@media (min-width: 800px) {
+    .projectDisplay{
+        min-width: 400px;
+        min-height: 500px;
+        max-width: 850px;
+    }
+  }
+  
+@media (max-height: 610px) and (min-width: 800px) {
+    .projectsContainer{
+        flex-direction: row;
+        margin-right: 40px;
     }
 }
 
