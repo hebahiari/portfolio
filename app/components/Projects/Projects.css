@@ -4,6 +4,7 @@
     justify-content: flex-start;
     align-items: center;
     gap: 30px;
+    z-index: 2;
 }
 
 
@@ -129,7 +130,6 @@ margin-top: -12px;
 @media (min-width: 800px) {
     .projectDisplay{
         min-width: 400px;
-        min-height: 500px;
         max-width: 850px;
         min-height: 100vh;
     }
@@ -139,7 +139,11 @@ margin-top: -12px;
     .projectsContainer{
         flex-direction: row;
         margin-right: 40px;
-        align-items: flex-start;
+        align-items: center;
+    }
+
+    .projectDisplay{
+        min-height: 400px;
     }
 }
 

@@ -22,7 +22,7 @@ const Contact = () => {
                 </div>
             </div>
             <div className='game cardBorder'>
-
+                <p>mini game under construction 🚧👾</p>
             </div>
         </div>
     )

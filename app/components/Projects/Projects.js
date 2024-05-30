@@ -191,9 +191,9 @@ const Projects = () => {
     }
 
     return (
-        <div className='projects'>
+        <div className='projects' id='projects'>
             <ProjectsMenu projects={projects} setIndex={setIndex} />
-            <div className='projectsContainer' id='projects'>
+            <div className='projectsContainer' >
                 <div className='projectDisplay'>
                     <a href={projects[index].links[1]} target='_blank'>
                         <div className='projectImage'>
