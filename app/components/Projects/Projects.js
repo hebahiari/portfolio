@@ -224,7 +224,7 @@ const Projects = () => {
                             </a>
                         </h3>
                         <div className='projectInfo'>
-                            {projects[index].desc}
+                            {projects[index].desc.join(" - ")}
                         </div>
                         <div className='projectTags'>
                             {projects[index].tags.map((tag, index) => <div key={index} className='projectTag'>{tag}</div>)}
