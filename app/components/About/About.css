@@ -40,6 +40,14 @@
     gap: 8px;
 }
 
+.typewriter{
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
 .aboutImg{
     padding: 0;
     overflow: hidden;

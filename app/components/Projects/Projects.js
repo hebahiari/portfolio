@@ -221,6 +221,7 @@ const Projects = () => {
                         <h3 className='projectTitle yellow'>
                             <a href={projects[index].links[1]} target='_blank'>
                                 {projects[index].name}
+                                <span className='green' style={{ fontSize: 'large' }}> {projects[index].type}</span>
                             </a>
                         </h3>
                         <div className='projectInfo'>
