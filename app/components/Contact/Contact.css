@@ -1,5 +1,5 @@
 .contactContainer{
-    height: calc(100vh - 200px);
+    min-height: calc(100vh - 200px);
     display: flex;
     justify-content: center;
     max-width: 1500px;
@@ -15,9 +15,7 @@
     align-items: center;
     justify-content: center;
     gap: 40px;
-    height: 500px;
     width: 100%;
-    max-width: 300px;
     text-align: center;
 }
 
@@ -42,4 +40,21 @@
 .game{
     height: 500px;
     width: 700px;
+}
+
+
+
+@media (min-width: 800px) {
+    .contactContainer{
+        flex-wrap: nowrap;
+    }
+
+    .contactInfo{
+        max-width: 300px;
+        height: 500px;
+    }
+}
+  
+@media (min-width: 1500px) {
+
 }

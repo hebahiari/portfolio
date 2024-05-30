@@ -1,21 +1,24 @@
 .footer{
     width: 100%;
-    height: 100px;
+    height: 100%;
     background-color: rgba(29, 73, 123, 0.415);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 40px;
+    padding: 40px;
     color: rgba(240, 255, 255, 0.484);
 }
 
 .footerContainer{
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-direction: column;
     align-items: center;
     flex-wrap: wrap;
     max-width: 1500px;
+    gap: 20px;
+    text-align: center;
 }
 
 .footerRight{
@@ -24,3 +27,15 @@
     align-items: center;
     gap: 20px
 }
+
+
+@media (min-width: 800px) {
+    .footerContainer{
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+  }
+  
+  @media (min-width: 1500px) {
+  }

@@ -5,6 +5,12 @@
   align-items: center;
   padding: 20px;
   min-height: 100vh;
-  gap: 40px;
+  gap: 80px;
   z-index: 2;
+}
+
+@media (min-width: 800px) {
+  .main{
+    gap: 40px;
+  }
 }
