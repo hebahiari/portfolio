@@ -9,6 +9,7 @@ import TypeWriter from './TypeWriter';
 const About = () => {
     return (
         <div className='aboutContainer' id='about'>
+            <div className='backdrop'></div>
             <div className='aboutTop'>
                 <div className='aboutLinks cardBorder'>
                     <a href='https://github.com/hebahiari' target='_blank'><FaGithub /></a>
