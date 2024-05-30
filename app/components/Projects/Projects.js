@@ -5,6 +5,7 @@ import { FiGithub } from "react-icons/fi";
 import { IoMdLink } from "react-icons/io";
 import Image from 'next/image';
 import { useState } from 'react';
+import ProjectsMenu from './ProjectsMenu';
 
 const projects = [
     {
@@ -190,49 +191,52 @@ const Projects = () => {
     }
 
     return (
-        <div className='projectsContainer' id='projects'>
-            <div className='projectDisplay'>
-                <a href={projects[index].links[1]} target='_blank'>
-                    <div className='projectImage'>
-                        <Image className='scaled' layout='responsive' width={100} height={100} src={projects[index].gif} />
-                    </div>
-                    <div className='projectImage'>
-                        <Image layout='responsive' width={100} height={100} src='/img/laptop.png' />
-                    </div>
-                </a>
-            </div>
-            <div className='projectDetails'>
-                <div className='projectsNav'>
-                    <button className='projectsIndex projectIndexArrow' onClick={prevProject}>
-                        &#60;
-                    </button>
-                    <div className='projectsIndex'>
-                        {index + 1} / {projects.length}
-                    </div>
-                    <button className='projectsIndex projectIndexArrow' onClick={nextProject}>
-                        &#62;
-                    </button>
+        <div className='projects'>
+            <ProjectsMenu projects={projects} setIndex={setIndex} />
+            <div className='projectsContainer' id='projects'>
+                <div className='projectDisplay'>
+                    <a href={projects[index].links[1]} target='_blank'>
+                        <div className='projectImage'>
+                            <Image className='scaled' layout='responsive' width={100} height={100} src={projects[index].gif} />
+                        </div>
+                        <div className='projectImage'>
+                            <Image layout='responsive' width={100} height={100} src='/img/laptop.png' />
+                        </div>
+                    </a>
                 </div>
+                <div className='projectDetails'>
+                    <div className='projectsNav'>
+                        <button className='projectsIndex projectIndexArrow' onClick={prevProject}>
+                            &#60;
+                        </button>
+                        <div className='projectsIndex'>
+                            {index + 1} / {projects.length}
+                        </div>
+                        <button className='projectsIndex projectIndexArrow' onClick={nextProject}>
+                            &#62;
+                        </button>
+                    </div>
 
-                <div className='projectDesc'>
-                    <h3 className='projectTitle yellow'>
-                        <a href={projects[index].links[1]} target='_blank'>
-                            {projects[index].name}
-                        </a>
-                    </h3>
-                    <div className='projectInfo'>
-                        {projects[index].desc}
-                    </div>
-                    <div className='projectTags'>
-                        {projects[index].tags.map((tag, index) => <div key={index} className='projectTag'>{tag}</div>)}
-                    </div>
-                    <div className='projectLinks'>
-                        <a href={projects[index].links[0]} className='projectLink' target='_blank'>
-                            <FiGithub />
-                        </a>
-                        <a href={projects[index].links[1]} className='projectLink' target='_blank'>
-                            <IoMdLink />
-                        </a>
+                    <div className='projectDesc'>
+                        <h3 className='projectTitle yellow'>
+                            <a href={projects[index].links[1]} target='_blank'>
+                                {projects[index].name}
+                            </a>
+                        </h3>
+                        <div className='projectInfo'>
+                            {projects[index].desc}
+                        </div>
+                        <div className='projectTags'>
+                            {projects[index].tags.map((tag, index) => <div key={index} className='projectTag'>{tag}</div>)}
+                        </div>
+                        <div className='projectLinks'>
+                            <a href={projects[index].links[0]} className='projectLink' target='_blank'>
+                                <FiGithub />
+                            </a>
+                            <a href={projects[index].links[1]} className='projectLink' target='_blank'>
+                                <IoMdLink />
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

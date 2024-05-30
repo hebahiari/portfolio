@@ -1,0 +1,42 @@
+.projectsTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.projectsTitle h3{
+font-size: xx-large;
+}
+
+.menuButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+    border-radius: 20px;
+    padding: 5px;
+    border: 1px solid beige;
+}
+
+.menuContainer{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 500px;
+    gap: 10px;
+    &:hover{
+        background-color: inherit;
+    }
+}
+
+.menuContainer button {
+    cursor: pointer;
+    font-style: inherit;
+    font-family: 'Cascadia Code', monospace;
+    font-size: medium;
+    &:hover{
+        background-color: rgba(250, 235, 215, 0.178);
+    }
+}
