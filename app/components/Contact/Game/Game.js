@@ -36,8 +36,13 @@ const Game = () => {
         k.loadSprite("heart", "/game/heart.png");
         k.loadFont('pixels', '/game/PixelifySans-Regular.ttf')
 
-        k.scene("game", () => {
 
+
+
+
+
+
+        k.scene("game", () => {
             // add a game object to screen
             const player = k.add([
                 // list of components
@@ -71,7 +76,7 @@ const Game = () => {
                 // Add the bullet
                 k.add([
                     k.rect(12, 6),
-                    k.pos(player.pos.x + player.width * 0.1, player.pos.y + player.height * 0.1),
+                    k.pos(player.pos.x + (player.width * 0.2), player.pos.y + (player.height * .2)),
                     k.area(),
                     k.color(255, 255, 0),
                     k.move(k.RIGHT, BULLET_SPEED),
@@ -186,8 +191,19 @@ const Game = () => {
                 k.text(score, {
                     font: "pixels", // Use the pixel font
                     size: 24, // Adjust the font size as needed
-                }), k.pos(k.width() / 2, k.height() / 2 + 80),
+                }),
+                k.pos(k.width() / 2, k.height() / 2 + 60),
                 k.scale(2),
+                k.anchor("center"),
+            ]);
+
+            k.add([
+                k.text('click any key to restart!', {
+                    font: "pixels", // Use the pixel font
+                    size: 24, // Adjust the font size as needed
+                }),
+                k.pos(k.width() / 2, k.height() / 2 + 110),
+                k.scale(1),
                 k.anchor("center"),
             ]);
 
@@ -197,7 +213,95 @@ const Game = () => {
 
         });
 
-        k.go("game");
+        k.scene("start", () => {
+
+            onUpdate(() => setCursor("default"))
+
+            k.add([
+                k.sprite("shooting"),
+                k.pos((k.width() / 2) - 60, k.height() / 2 - 80),
+                k.scale(.4),
+                k.anchor("center"),
+            ]);
+
+            k.add([
+                k.rect(12, 6),
+                k.pos((k.width() / 2), k.height() / 2 - 80),
+                k.area(),
+                k.color(255, 255, 0),
+                "bullet",
+            ]);
+
+
+            k.add([
+                k.sprite("bug"),
+                k.pos((k.width() / 2) + 60, k.height() / 2 - 80),
+                scale(.07),
+                rotate(270),
+                k.anchor("center"),
+            ]);
+
+            k.add([
+                k.text('help me destroy bugs!', {
+                    font: "pixels", // Use the pixel font
+                    size: 24, // Adjust the font size as needed
+                }),
+                k.pos(k.width() / 2, (k.height() / 2)),
+                k.anchor("center"),
+            ]);
+
+            function addButton(txt, p, f) {
+
+                // add a parent background object
+                const btn = add([
+                    rect(150, 80),
+                    pos((k.width() / 2), (k.height() / 2) + 80),
+                    area(),
+                    scale(1),
+                    anchor("center"),
+                    outline(4),
+                ])
+
+                // add a child object that displays the text
+                btn.add([
+                    k.text(txt, {
+                        font: "pixels", // Use the pixel font
+                        size: 24, // Adjust the font size as needed
+                    }), anchor("center"),
+                    color(0, 0, 0),
+                ])
+
+                // onHoverUpdate() comes from area() component
+                // it runs every frame when the object is being hovered
+                btn.onHoverUpdate(() => {
+                    const t = time() * 10
+                    btn.color = hsl2rgb((t / 10) % 1, 0.6, 0.7)
+                    btn.scale = vec2(1.2)
+                    setCursor("pointer")
+                })
+
+                // onHoverEnd() comes from area() component
+                // it runs once when the object stopped being hovered
+                btn.onHoverEnd(() => {
+                    btn.scale = vec2(1)
+                    btn.color = rgb()
+                })
+
+                // onClick() comes from area() component
+                // it runs once when the object is clicked
+                btn.onClick(f)
+
+                return btn
+
+            }
+
+            const startButton = addButton("start", vec2(200, 100), () => {
+                startButton.destroy();
+                k.go("game");
+            })
+
+        })
+        k.go('start')
 
     }, [])
 
