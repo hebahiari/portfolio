@@ -2,9 +2,9 @@
 
 import kaboom from "kaboom"
 import * as React from "react"
+import Head from 'next/head';
 
 const FLOOR_HEIGHT = 48;
-const JUMP_FORCE = 800;
 const SPEED = 480;
 const MOVE_SPEED = 350; // Speed at which the sprite moves up and down
 const BULLET_SPEED = 600; // Speed of the bullets
@@ -33,7 +33,8 @@ const Game = () => {
         k.loadSprite("shooting", "/game/sprite_wink.png");
         k.loadSprite("hit", "/game/sprite_hurt.png");
         k.loadSprite("bug", "/game/bug.png");
-
+        k.loadSprite("heart", "/game/heart.png");
+        k.loadFont('pixels', '/game/PixelifySans-Regular.ttf')
 
         k.scene("game", () => {
 
@@ -48,13 +49,6 @@ const Game = () => {
             ]);
 
             let lives = INITIAL_LIVES;
-
-            // Display the lives counter
-            const livesLabel = k.add([
-                k.text(`Lives: ${lives}`),
-                k.pos(24, 64),
-                { value: lives }
-            ]);
 
             // Move the player up
             k.onKeyDown("up", () => {
@@ -111,6 +105,28 @@ const Game = () => {
             // start spawning trees
             spawnTree();
 
+
+            // Inside the "game" scene function
+            const heartSprites = []; // Array to store references to heart sprites
+
+            // Function to update hearts display
+            function updateHearts() {
+                // Clear existing heart sprites
+                heartSprites.forEach(sprite => sprite.destroy());
+
+                // Create heart sprites based on the number of lives
+                for (let i = 0; i < lives; i++) {
+                    const heartSprite = k.add([
+                        k.sprite("heart"),
+                        k.pos(k.width() - 40 - i * 30, 24), // Adjust position based on index
+                        k.scale(0.06),
+                    ]);
+                    heartSprites.push(heartSprite); // Store reference to heart sprite
+                }
+            }
+
+            updateHearts();
+
             // Collision detection between bullets and trees
             k.onCollide("bullet", "tree", (bullet, tree) => {
                 k.destroy(bullet);
@@ -122,12 +138,12 @@ const Game = () => {
             player.onCollide("tree", () => {
                 // Change to hit sprite
                 player.use(k.sprite("hit"));
+                updateHearts();
                 k.wait(HIT_DURATION, () => {
                     player.use(k.sprite("normal"));
                 });
 
                 lives--;
-                livesLabel.text = `Lives: ${lives}`;
 
                 if (lives <= 0) {
                     // go to "lose" scene and pass the score
@@ -141,7 +157,10 @@ const Game = () => {
             let score = 0;
 
             const scoreLabel = k.add([
-                k.text(score),
+                k.text(score, {
+                    font: "pixels", // Use the pixel font
+                    size: 35, // Adjust the font size as needed
+                }),
                 k.pos(24, 24),
             ]);
 
@@ -164,8 +183,10 @@ const Game = () => {
 
             // display score
             k.add([
-                k.text(score),
-                k.pos(k.width() / 2, k.height() / 2 + 80),
+                k.text(score, {
+                    font: "pixels", // Use the pixel font
+                    size: 24, // Adjust the font size as needed
+                }), k.pos(k.width() / 2, k.height() / 2 + 80),
                 k.scale(2),
                 k.anchor("center"),
             ]);
@@ -180,8 +201,17 @@ const Game = () => {
 
     }, [])
 
-    return <canvas ref={canvasRef} style={{ background: 'transparent' }}></canvas>
-
+    return (
+        <>
+            <Head>
+                <link
+                    rel="stylesheet"
+                    href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap"
+                />
+            </Head>
+            <canvas ref={canvasRef} style={{ background: 'transparent' }} />
+        </>
+    );
 }
 
 export default Game
