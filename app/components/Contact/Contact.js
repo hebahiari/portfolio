@@ -1,8 +1,10 @@
 import { IoMailOutline } from "react-icons/io5";
 import { MdOutlinePhoneEnabled } from "react-icons/md";
 import { FaLinkedin } from "react-icons/fa";
-
 import './Contact.css'
+import dynamic from 'next/dynamic';
+
+const KaboomGame = dynamic(() => import('./Game/Game'), { ssr: false });
 
 const Contact = () => {
     return (
@@ -21,8 +23,8 @@ const Contact = () => {
                     </div>
                 </div>
             </div>
-            <div className='game cardBorder'>
-                <p>mini game under construction 🚧👾</p>
+            <div className='gameContainer cardBorder'>
+                <KaboomGame />
             </div>
         </div>
     )
