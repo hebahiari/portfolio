@@ -4,7 +4,6 @@ import kaboom from "kaboom"
 import * as React from "react"
 import Head from 'next/head';
 
-const FLOOR_HEIGHT = 48;
 const SPEED = 480;
 const MOVE_SPEED = 350; // Speed at which the sprite moves up and down
 const BULLET_SPEED = 600; // Speed of the bullets
@@ -25,7 +24,7 @@ const Game = () => {
             // global: false,
             // if you don't want kaboom to create a canvas and insert under document.body
             canvas: canvasRef.current,
-            // background: true, // This ensures the background is rendered as transparent
+            background: true, // This ensures the background is rendered as transparent
             clearColor: [0, 0, 0, 0], // Set clearColor to transparent
         })
 
@@ -35,14 +34,20 @@ const Game = () => {
         k.loadSprite("hit", "/game/sprite_hurt.png");
         k.loadSprite("bug", "/game/bug.png");
         k.loadSprite("heart", "/game/heart.png");
+
         k.loadFont('pixels', '/game/PixelifySans-Regular.ttf')
+        k.loadSound("start", "/game/sound/start.mp3");
+        k.loadSound("lose", "/game/sound/lose.mp3"); // Load shoot sound
+        k.loadSound("shoot", "/game/sound/shoot.mp3");
+        k.loadSound("destroy", "/game/sound/destroy.mp3");
+        k.loadSound("hit", "/game/sound/hit.mp3");
 
         k.scene("game", () => {
             // add a game object to screen
             const player = k.add([
                 // list of components
                 k.sprite("normal"),
-                k.pos(80, 40),
+                k.pos(40, 50),
                 k.area(),
                 k.body(),
                 k.scale(.4)
@@ -67,6 +72,8 @@ const Game = () => {
                 k.wait(SHOOT_DURATION, () => {
                     player.use(k.sprite("normal"));
                 });
+                k.play("shoot");
+
 
                 // Add the bullet
                 k.add([
@@ -103,7 +110,7 @@ const Game = () => {
             }
 
             // start spawning trees
-            spawnBug();
+            k.wait(1, spawnBug);
 
 
             // Inside the "game" scene function
@@ -131,27 +138,33 @@ const Game = () => {
             k.onCollide("bullet", "bug", (bullet, bug) => {
                 k.destroy(bullet);
                 k.destroy(bug);
+                k.play("destroy");
+
                 // Optionally, you could add some explosion effect here
             });
 
 
 
-            // lose if player collides with any game obj with tag "tree"
+            // lose if player collides with any game obj with tag "bug"
             player.onCollide("bug", (bug) => {
                 // Change to hit sprite
                 player.use(k.sprite("hit"));
-                updateHearts();
                 k.destroy(bug);
+                k.play("hit");
+
+                // Decrement lives first
+                lives--;
+
+                // Then update hearts display
+                updateHearts();
+
                 k.wait(HIT_DURATION, () => {
                     player.use(k.sprite("normal"));
                 });
 
-                lives--;
-
                 if (lives <= 0) {
                     // go to "lose" scene and pass the score
                     k.go("lose", score);
-                    k.addKaboom(player.pos);
                 }
             });
 
@@ -176,6 +189,7 @@ const Game = () => {
 
         k.scene("lose", (score) => {
 
+            k.play("lose");
             k.add([
                 k.sprite("hit"),
                 k.pos(k.width() / 2, k.height() / 2 - 80),
@@ -195,12 +209,12 @@ const Game = () => {
             ]);
 
             k.add([
-                k.text('click any key to restart!', {
+                k.text('click to restart', {
                     font: "pixels", // Use the pixel font
                     size: 24, // Adjust the font size as needed
                 }),
                 k.pos(k.width() / 2, k.height() / 2 + 110),
-                k.scale(1),
+                k.scale(1.4),
                 k.anchor("center"),
             ]);
 
@@ -239,7 +253,7 @@ const Game = () => {
             ]);
 
             k.add([
-                k.text('help me destroy bugs!', {
+                k.text('help heba destroy bugs!', {
                     font: "pixels", // Use the pixel font
                     size: 24, // Adjust the font size as needed
                 }),
@@ -294,6 +308,7 @@ const Game = () => {
 
             const startButton = addButton("start", vec2(200, 100), () => {
                 startButton.destroy();
+                k.play("start");
                 k.go("game");
             })
 

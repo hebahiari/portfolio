@@ -11,7 +11,7 @@ import RotateOnHover from "./components/RotateOnHover/RotateOnHover";
 
 export default function Home() {
   return (
-    <>
+    <div style={{ position: 'relative' }}>
       <Background />
       <main className={styles.main}>
         <Navbar />
@@ -23,6 +23,6 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
