@@ -17,8 +17,6 @@ const Game = () => {
 
     // just make sure this is only run once on mount so your game state is not messed up
     React.useEffect(() => {
-        window.scrollTo(0, 0);
-
         const k = kaboom({
             // if you don't want to import to the global namespace
             // global: false,
@@ -26,6 +24,7 @@ const Game = () => {
             canvas: canvasRef.current,
             background: true, // This ensures the background is rendered as transparent
             clearColor: [0, 0, 0, 0], // Set clearColor to transparent
+            focus: false
         })
 
         // load assets
@@ -318,15 +317,7 @@ const Game = () => {
     }, [])
 
     return (
-        <>
-            <Head>
-                <link
-                    rel="stylesheet"
-                    href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap"
-                />
-            </Head>
-            <canvas ref={canvasRef} style={{ background: 'transparent' }} tabIndex="-1" />
-        </>
+        <canvas ref={canvasRef} style={{ background: 'transparent' }} tabIndex="-1" />
     );
 }
 
