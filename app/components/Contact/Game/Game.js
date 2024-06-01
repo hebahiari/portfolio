@@ -18,13 +18,14 @@ const Game = () => {
 
     // just make sure this is only run once on mount so your game state is not messed up
     React.useEffect(() => {
+        window.scrollTo(0, 0);
 
         const k = kaboom({
             // if you don't want to import to the global namespace
             // global: false,
             // if you don't want kaboom to create a canvas and insert under document.body
             canvas: canvasRef.current,
-            background: true, // This ensures the background is rendered as transparent
+            // background: true, // This ensures the background is rendered as transparent
             clearColor: [0, 0, 0, 0], // Set clearColor to transparent
         })
 
@@ -35,12 +36,6 @@ const Game = () => {
         k.loadSprite("bug", "/game/bug.png");
         k.loadSprite("heart", "/game/heart.png");
         k.loadFont('pixels', '/game/PixelifySans-Regular.ttf')
-
-
-
-
-
-
 
         k.scene("game", () => {
             // add a game object to screen
@@ -87,28 +82,28 @@ const Game = () => {
             // Shoot bullets when pressing the space key
             k.onKeyPress("space", shoot);
 
-            function spawnTree() {
+            function spawnBug() {
 
                 // add tree obj at random height
                 k.add([
                     k.sprite("bug"),
                     k.area(),
                     k.outline(4),
-                    k.pos(k.width(), k.rand(0, k.height() - FLOOR_HEIGHT)),
+                    k.pos(k.width(), k.rand(80, k.height() - 20)),
                     k.anchor("botleft"),
                     k.move(k.LEFT, SPEED),
                     scale(.07),
                     rotate(270),
-                    "tree",
+                    "bug",
                 ]);
 
                 // wait a random amount of time to spawn next tree
-                k.wait(k.rand(0.5, 1.5), spawnTree);
+                k.wait(k.rand(0.5, 1.5), spawnBug);
 
             }
 
             // start spawning trees
-            spawnTree();
+            spawnBug();
 
 
             // Inside the "game" scene function
@@ -133,17 +128,20 @@ const Game = () => {
             updateHearts();
 
             // Collision detection between bullets and trees
-            k.onCollide("bullet", "tree", (bullet, tree) => {
+            k.onCollide("bullet", "bug", (bullet, bug) => {
                 k.destroy(bullet);
-                k.destroy(tree);
+                k.destroy(bug);
                 // Optionally, you could add some explosion effect here
             });
 
+
+
             // lose if player collides with any game obj with tag "tree"
-            player.onCollide("tree", () => {
+            player.onCollide("bug", (bug) => {
                 // Change to hit sprite
                 player.use(k.sprite("hit"));
                 updateHearts();
+                k.destroy(bug);
                 k.wait(HIT_DURATION, () => {
                     player.use(k.sprite("normal"));
                 });
@@ -153,7 +151,6 @@ const Game = () => {
                 if (lives <= 0) {
                     // go to "lose" scene and pass the score
                     k.go("lose", score);
-                    k.burp();
                     k.addKaboom(player.pos);
                 }
             });
@@ -313,7 +310,7 @@ const Game = () => {
                     href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap"
                 />
             </Head>
-            <canvas ref={canvasRef} style={{ background: 'transparent' }} />
+            <canvas ref={canvasRef} style={{ background: 'transparent' }} tabIndex="-1" />
         </>
     );
 }
