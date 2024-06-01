@@ -31,8 +31,11 @@ const Game = () => {
         k.loadSprite("normal", "/game/sprite_normal.png");
         k.loadSprite("shooting", "/game/sprite_wink.png");
         k.loadSprite("hit", "/game/sprite_hurt.png");
+        k.loadSprite("vanish", "/game/vanish.png");
         k.loadSprite("bug", "/game/bug.png");
         k.loadSprite("heart", "/game/heart.png");
+        k.loadSprite("up", "/game/up.png");
+
 
         k.loadFont('pixels', '/game/PixelifySans-Regular.ttf')
         k.loadSound("start", "/game/sound/start.mp3");
@@ -54,6 +57,43 @@ const Game = () => {
 
             let lives = INITIAL_LIVES;
 
+            function addButton(txt, p, f) {
+
+                // add a parent background object
+                const btn = k.add([
+                    k.sprite('up'),
+                    k.pos(p[0], p[1]),
+                    k.area(),
+                    // outline(4),
+                ])
+
+                // // add a child object that displays the text
+                const text = k.add([
+                    k.text(txt, {
+                        font: "pixels", // Use the pixel font
+                        size: 24, // Adjust the font size as needed
+                    }),
+                    k.pos(p[0], p[1]),
+                    k.anchor("center"),
+                    k.color(0, 0, 0),
+                ]);
+
+                // onHoverUpdate() comes from area() component
+                // it runs every frame when the object is being hovered
+                btn.onHoverUpdate(() => {
+                    setCursor("pointer")
+                })
+
+                btn.onHoverEnd(() => {
+                    setCursor("normal")
+                })
+
+                // onClick() comes from area() component
+                // it runs once when the object is clicked
+                btn.onClick(f)
+                return btn
+            }
+
             // Move the player up
             k.onKeyDown("up", () => {
                 player.move(0, -MOVE_SPEED);
@@ -63,6 +103,18 @@ const Game = () => {
             k.onKeyDown("down", () => {
                 player.move(0, MOVE_SPEED);
             });
+
+            // addButton("shoot", [k.width() - 60, k.height() - 60], () => {
+            //     shoot()
+            // })
+
+            // addButton(">", [20, k.height() - 110], () => {
+            //     player.move(0, MOVE_SPEED);
+            // })
+
+            // addButton("<", [20, k.height() - 60], () => {
+            //     player.move(0, -MOVE_SPEED);
+            // })
 
             // Function to spawn bullets
             function shoot() {
@@ -87,6 +139,8 @@ const Game = () => {
 
             // Shoot bullets when pressing the space key
             k.onKeyPress("space", shoot);
+
+
 
             function spawnBug() {
 
@@ -143,16 +197,47 @@ const Game = () => {
             });
 
 
+            // Function to flash the player sprite
+            function flashSprite() {
+                let count = 0;
+
+                // Define the flashing function
+                function flash() {
+                    if (count >= 3 * 2) {
+                        // Reset player sprite to normal after flashing
+                        player.use(k.sprite("normal"));
+                        return;
+                    }
+
+                    // Toggle between normal and hit sprites
+                    if (count % 2 === 0) {
+                        player.use(k.sprite("hit"));
+                    } else {
+                        player.use(k.sprite('vanish'));
+                    }
+
+                    count++;
+
+                    // Schedule the next flash
+                    k.wait(0.1, flash);
+                }
+
+                // Start the flashing process
+                flash();
+
+            }
+
 
             // lose if player collides with any game obj with tag "bug"
             player.onCollide("bug", (bug) => {
                 // Change to hit sprite
-                player.use(k.sprite("hit"));
                 k.destroy(bug);
                 k.play("hit");
+                flashSprite();
 
                 // Decrement lives first
                 lives--;
+
 
                 // Then update hearts display
                 updateHearts();
@@ -217,10 +302,12 @@ const Game = () => {
                 k.anchor("center"),
             ]);
 
-            // go back to game with space is pressed
-            k.onKeyPress("space", () => k.go("game"));
-            k.onClick(() => k.go("game"));
+            k.wait(1, () => {
+                // go back to game with space is pressed
+                k.onKeyPress("space", () => k.go("game"));
+                k.onClick(() => k.go("game"));
 
+            })
         });
 
         k.scene("start", () => {
@@ -259,6 +346,7 @@ const Game = () => {
                 k.pos(k.width() / 2, (k.height() / 2)),
                 k.anchor("center"),
             ]);
+
 
             function addButton(txt, p, f) {
 
@@ -304,6 +392,7 @@ const Game = () => {
                 return btn
 
             }
+
 
             const startButton = addButton("start", vec2(200, 100), () => {
                 startButton.destroy();
