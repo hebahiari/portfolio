@@ -7,7 +7,7 @@ import Projects from "./components/Projects/Projects";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 import Background from "./components/Background/Background";
-import RotateOnHover from "./components/RotateOnHover/RotateOnHover";
+import RotateOnHover from "./components/Hero/RotateOnHover/RotateOnHover";
 
 export default function Home() {
   return (
