@@ -7,19 +7,29 @@ import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 import Background from "./components/Background/Background";
 import RotateOnHover from "./components/Hero/RotateOnHover/RotateOnHover";
+import MiniNav from "./components/Navbar/MiniNav";
 
 export default function Home() {
   return (
     <div style={{ position: 'relative' }}>
       <Background />
       <main className='mainContainer'>
+        <MiniNav />
         <Navbar />
-        <RotateOnHover>
-          <Hero />
-        </RotateOnHover>
-        <About />
-        <Projects />
-        <Contact />
+        <section>
+          <RotateOnHover>
+            <Hero />
+          </RotateOnHover>
+        </section>
+        <section>
+          <About />
+        </section>
+        <section>
+          <Projects />
+        </section>
+        <section>
+          <Contact />
+        </section>
       </main>
       <Footer />
     </div>

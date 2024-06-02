@@ -94,8 +94,33 @@ button {
   z-index: 2;
 }
 
+
 @media (min-width: 800px) {
   .mainContainer{
     gap: 40px;
   }
+}
+
+
+@media (min-width: 1400px) {
+
+  .html{
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .mainContainer{
+    overflow: scroll;
+    height: 100vh;
+    scroll-snap-points-y: repeat(100vh);
+    scroll-snap-type: y mandatory;
+  }
+
+  section {
+    height: 100vh;
+    scroll-snap-align: start;
+    padding-top: 50px;
+    position: relative;
+  }
+
 }

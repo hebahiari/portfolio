@@ -60,3 +60,9 @@
     transition: all 0.5s ease-out;
   }
   
+
+  @media (min-width: 1000px) {
+    .background{
+max-height: 100vh
+    };
+  }
