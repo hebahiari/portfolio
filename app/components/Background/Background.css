@@ -34,21 +34,21 @@
     left: -200px;
   }
 
-.two{
-    --size: 800px
-    position: absolute;
-    right: -100px;
-    top: 500px;
-    background-image: linear-gradient(rgb(0, 47, 255), hsl(291, 100%, 71%));
-}
+  .two{
+      --size: 800px
+      position: absolute;
+      right: -100px;
+      top: 500px;
+      background-image: linear-gradient(rgb(0, 47, 255), hsl(291, 100%, 71%));
+  }
 
-.three{
-    --size: 800px
-    position: absolute;
-    left: -100px;
-    top: 1000px;
-    background-image: linear-gradient(rgb(170, 67, 239), hsl(205, 100%, 52%));
-}
+  .three{
+      --size: 800px
+      position: absolute;
+      left: -100px;
+      top: 1000px;
+      background-image: linear-gradient(rgb(170, 67, 239), hsl(205, 100%, 52%));
+  }
   
   @media (min-width: 720px) {
     .gradient {
@@ -61,8 +61,8 @@
   }
   
 
-  @media (min-width: 1000px) {
+  @media (min-width: 1400px) {
     .background{
-max-height: 100vh
+        display: none
     };
   }

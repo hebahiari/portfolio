@@ -88,10 +88,18 @@ button {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 20px 20px 0 20px;
   min-height: 100vh;
   gap: 80px;
   z-index: 2;
+}
+
+.lastSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
 }
 
 
@@ -114,12 +122,13 @@ button {
     height: 100vh;
     scroll-snap-points-y: repeat(100vh);
     scroll-snap-type: y mandatory;
+    padding: 0 80px;
+    overflow-x: hidden;
   }
 
   section {
     height: 100vh;
     scroll-snap-align: start;
-    padding-top: 50px;
     position: relative;
   }
 

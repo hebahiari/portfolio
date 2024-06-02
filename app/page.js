@@ -27,11 +27,11 @@ export default function Home() {
         <section>
           <Projects />
         </section>
-        <section>
+        <section className="lastSection">
           <Contact />
+          <Footer />
         </section>
       </main>
-      <Footer />
     </div>
   );
 }

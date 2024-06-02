@@ -59,6 +59,8 @@
     }
 }
   
-@media (min-width: 1500px) {
-
+@media (min-width: 1400px) {
+    .contactContainer{
+            height: calc(100vh-125px);
+    }
 }
