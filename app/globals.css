@@ -16,7 +16,7 @@ body {
 body{
   background-image: url('/img/pattern.png');
   background-repeat: repeat;
-  background-size: 20%;
+  background-size: 300px;
 }
 
 a {
@@ -83,3 +83,19 @@ button {
   color:#4ec9b0
 }
 
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
+  gap: 80px;
+  z-index: 2;
+}
+
+@media (min-width: 800px) {
+  .mainContainer{
+    gap: 40px;
+  }
+}
