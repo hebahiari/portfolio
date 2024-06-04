@@ -125,13 +125,13 @@
   /* Large screens */
   @media only screen and (min-width: 600px) {
     .navbar {
-      top: 20vh;
+      top: calc(40vh - 150px);
       width: 60px;
       margin: 20px;
     }
   
     .navbar:hover {
-      width: 16rem;
+      width: 14rem;
     }
   
     .navbar:hover .link-text {

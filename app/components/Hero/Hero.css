@@ -38,8 +38,14 @@
     }
   }
   
-  @media (min-width: 1500px) {
+@media (min-width: 1200px) {
+.hero {
+    scale: 200%;
+}
+}
+
+@media (min-width: 1500px) {
     .hero {
-        scale: 200%;
+        scale: 250%;
     }
-  }
+    }
