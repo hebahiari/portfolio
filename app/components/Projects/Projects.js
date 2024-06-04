@@ -193,6 +193,17 @@ const Projects = () => {
     return (
         <div className='projects' id='projects'>
             <ProjectsMenu projects={projects} setIndex={setIndex} />
+            <div className='projectsNav'>
+                <button className='projectsIndex projectIndexArrow' onClick={prevProject}>
+                    &#60;
+                </button>
+                <div className='projectsIndex'>
+                    {index + 1} / {projects.length}
+                </div>
+                <button className='projectsIndex projectIndexArrow' onClick={nextProject}>
+                    &#62;
+                </button>
+            </div>
             <div className='projectsContainer' >
                 <div className='projectDisplay'>
                     <a href={projects[index].links[1]} target='_blank'>
@@ -205,18 +216,6 @@ const Projects = () => {
                     </a>
                 </div>
                 <div className='projectDetails'>
-                    <div className='projectsNav'>
-                        <button className='projectsIndex projectIndexArrow' onClick={prevProject}>
-                            &#60;
-                        </button>
-                        <div className='projectsIndex'>
-                            {index + 1} / {projects.length}
-                        </div>
-                        <button className='projectsIndex projectIndexArrow' onClick={nextProject}>
-                            &#62;
-                        </button>
-                    </div>
-
                     <div className='projectDesc'>
                         <h3 className='projectTitle yellow'>
                             <a href={projects[index].links[1]} target='_blank'>
@@ -241,6 +240,7 @@ const Projects = () => {
                     </div>
                 </div>
             </div>
+
         </div>
     )
 }
