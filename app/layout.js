@@ -8,6 +8,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <script defer src="https://app.tinyanalytics.io/pixel/7JCvjangLJk8vxFn"></script>
+      </head>
       <body>{children}</body>
     </html>
   );
