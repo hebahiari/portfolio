@@ -57,64 +57,19 @@ const Game = () => {
 
             let lives = INITIAL_LIVES;
 
-            function addButton(txt, p, f) {
-
-                // add a parent background object
-                const btn = k.add([
-                    k.sprite('up'),
-                    k.pos(p[0], p[1]),
-                    k.area(),
-                    // outline(4),
-                ])
-
-                // // add a child object that displays the text
-                const text = k.add([
-                    k.text(txt, {
-                        font: "pixels", // Use the pixel font
-                        size: 24, // Adjust the font size as needed
-                    }),
-                    k.pos(p[0], p[1]),
-                    k.anchor("center"),
-                    k.color(0, 0, 0),
-                ]);
-
-                // onHoverUpdate() comes from area() component
-                // it runs every frame when the object is being hovered
-                btn.onHoverUpdate(() => {
-                    setCursor("pointer")
-                })
-
-                btn.onHoverEnd(() => {
-                    setCursor("normal")
-                })
-
-                // onClick() comes from area() component
-                // it runs once when the object is clicked
-                btn.onClick(f)
-                return btn
-            }
-
             // Move the player up
             k.onKeyDown("up", () => {
-                player.move(0, -MOVE_SPEED);
+                if (player.pos.y > 0) { // Ensure the player doesn't move above the top of the screen
+                    player.move(0, -MOVE_SPEED);
+                }
             });
 
             // Move the player down
             k.onKeyDown("down", () => {
-                player.move(0, MOVE_SPEED);
+                if (player.pos.y < k.height() - 70) { // Ensure the player doesn't move below the bottom of the screen
+                    player.move(0, MOVE_SPEED);
+                }
             });
-
-            // addButton("shoot", [k.width() - 60, k.height() - 60], () => {
-            //     shoot()
-            // })
-
-            // addButton(">", [20, k.height() - 110], () => {
-            //     player.move(0, MOVE_SPEED);
-            // })
-
-            // addButton("<", [20, k.height() - 60], () => {
-            //     player.move(0, -MOVE_SPEED);
-            // })
 
             // Function to spawn bullets
             function shoot() {
@@ -344,6 +299,72 @@ const Game = () => {
                     size: 24, // Adjust the font size as needed
                 }),
                 k.pos(k.width() / 2, (k.height() / 2)),
+                k.anchor("center"),
+            ]);
+
+            k.add([
+                k.text('keys:', {
+                    font: "pixels", // Use the pixel font
+                    size: 24, // Adjust the font size as needed
+                }),
+                k.pos((k.width() / 2) - 95, (k.height() / 2) + 175),
+                k.anchor("center"),
+            ]);
+
+            k.add([
+                k.rect(30, 30),
+                k.pos((k.width() / 2) + 1, k.height() / 2 + 175),
+                k.area(),
+                k.color(0, 0, 0),
+                k.outline(2, k.rgb(255, 255, 255)), // Set the outline color to red
+                k.anchor('center')
+            ]);
+
+            k.add([
+                k.text('>', {
+                    font: "pixels", // Use the pixel font
+                    size: 20, // Adjust the font size as needed
+                }),
+                k.rotate(90),
+                k.pos((k.width() / 2) + 1, (k.height() / 2) + 175),
+                k.anchor("center"),
+            ]);
+
+            k.add([
+                k.rect(30, 30),
+                k.pos((k.width() / 2) - 40, k.height() / 2 + 175),
+                k.area(),
+                k.color(0, 0, 0),
+                k.outline(2, k.rgb(255, 255, 255)), // Set the outline color to red
+                k.anchor('center')
+            ]);
+
+            k.add([
+                k.text('>', {
+                    font: "pixels", // Use the pixel font
+                    size: 20, // Adjust the font size as needed
+                }),
+                k.rotate(270),
+                k.pos((k.width() / 2) - 40, (k.height() / 2) + 175),
+                k.anchor("center"),
+            ]);
+
+
+            k.add([
+                k.rect(75, 30),
+                k.pos((k.width() / 2) + 65, k.height() / 2 + 175),
+                k.area(),
+                k.color(0, 0, 0),
+                k.outline(2, k.rgb(255, 255, 255)), // Set the outline color to red
+                k.anchor('center')
+            ]);
+
+            k.add([
+                k.text('space', {
+                    font: "pixels", // Use the pixel font
+                    size: 20, // Adjust the font size as needed
+                }),
+                k.pos((k.width() / 2) + 65, (k.height() / 2) + 175),
                 k.anchor("center"),
             ]);
 
