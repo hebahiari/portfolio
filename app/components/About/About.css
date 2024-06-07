@@ -29,6 +29,9 @@
 
 .aboutLinks a{
     font-size: 20px;
+    &:hover{
+        color: #c8a405;
+    }
 }
 
 .aboutDesc{

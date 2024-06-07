@@ -34,7 +34,6 @@ const Game = () => {
         k.loadSprite("vanish", "/game/vanish.png");
         k.loadSprite("bug", "/game/bug.png");
         k.loadSprite("heart", "/game/heart.png");
-        k.loadSprite("up", "/game/up.png");
 
 
         k.loadFont('pixels', '/game/PixelifySans-Regular.ttf')
