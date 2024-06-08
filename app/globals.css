@@ -50,7 +50,7 @@ button {
   border-radius: 20px;
   border: 1px solid beige;
   &:hover{
-      background-color: rgba(250, 235, 215, 0.178);
+      background-color: rgba(250, 235, 215, 0.075);
 }
 }
 

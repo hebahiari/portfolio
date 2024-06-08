@@ -74,7 +74,7 @@ margin-top: -12px;
     height: 40px;
     cursor: pointer;
     &:hover{
-        background-color: rgba(250, 235, 215, 0.253);
+        background-color: rgba(250, 235, 215, 0.075);
     }
 }
 
@@ -89,7 +89,7 @@ margin-top: -12px;
     max-width: 1000px;
 
     &:hover{
-        background-color: rgba(250, 235, 215, 0.178);
+        background-color: rgba(250, 235, 215, 0.075);
     }
 }
 
@@ -125,7 +125,7 @@ margin-top: -12px;
     align-items: center;
 
     &:hover{
-        background-color: rgba(250, 235, 215, 0.411);
+        background-color: rgba(250, 235, 215, 0.075);
     }
 }
 

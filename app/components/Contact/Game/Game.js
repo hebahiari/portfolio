@@ -270,14 +270,14 @@ const Game = () => {
 
             k.add([
                 k.sprite("shooting"),
-                k.pos((k.width() / 2) - 60, k.height() / 2 - 80),
+                k.pos((k.width() / 2) - 60, k.height() / 2 - 110),
                 k.scale(.4),
                 k.anchor("center"),
             ]);
 
             k.add([
                 k.rect(12, 6),
-                k.pos((k.width() / 2), k.height() / 2 - 80),
+                k.pos((k.width() / 2), k.height() / 2 - 110),
                 k.area(),
                 k.color(255, 255, 0),
                 "bullet",
@@ -286,7 +286,7 @@ const Game = () => {
 
             k.add([
                 k.sprite("bug"),
-                k.pos((k.width() / 2) + 60, k.height() / 2 - 80),
+                k.pos((k.width() / 2) + 60, k.height() / 2 - 110),
                 scale(.07),
                 rotate(270),
                 k.anchor("center"),
@@ -297,7 +297,7 @@ const Game = () => {
                     font: "pixels", // Use the pixel font
                     size: 24, // Adjust the font size as needed
                 }),
-                k.pos(k.width() / 2, (k.height() / 2)),
+                k.pos(k.width() / 2, (k.height() / 2) - 30),
                 k.anchor("center"),
             ]);
 
@@ -306,13 +306,13 @@ const Game = () => {
                     font: "pixels", // Use the pixel font
                     size: 24, // Adjust the font size as needed
                 }),
-                k.pos((k.width() / 2) - 95, (k.height() / 2) + 175),
+                k.pos((k.width() / 2) - 95, (k.height() / 2) + 145),
                 k.anchor("center"),
             ]);
 
             k.add([
                 k.rect(30, 30),
-                k.pos((k.width() / 2) + 1, k.height() / 2 + 175),
+                k.pos((k.width() / 2) + 1, k.height() / 2 + 145),
                 k.area(),
                 k.color(0, 0, 0),
                 k.outline(2, k.rgb(255, 255, 255)), // Set the outline color to red
@@ -325,13 +325,13 @@ const Game = () => {
                     size: 20, // Adjust the font size as needed
                 }),
                 k.rotate(90),
-                k.pos((k.width() / 2) + 1, (k.height() / 2) + 175),
+                k.pos((k.width() / 2) + 1, (k.height() / 2) + 145),
                 k.anchor("center"),
             ]);
 
             k.add([
                 k.rect(30, 30),
-                k.pos((k.width() / 2) - 40, k.height() / 2 + 175),
+                k.pos((k.width() / 2) - 40, k.height() / 2 + 145),
                 k.area(),
                 k.color(0, 0, 0),
                 k.outline(2, k.rgb(255, 255, 255)), // Set the outline color to red
@@ -344,14 +344,14 @@ const Game = () => {
                     size: 20, // Adjust the font size as needed
                 }),
                 k.rotate(270),
-                k.pos((k.width() / 2) - 40, (k.height() / 2) + 175),
+                k.pos((k.width() / 2) - 40, (k.height() / 2) + 145),
                 k.anchor("center"),
             ]);
 
 
             k.add([
                 k.rect(75, 30),
-                k.pos((k.width() / 2) + 65, k.height() / 2 + 175),
+                k.pos((k.width() / 2) + 65, k.height() / 2 + 145),
                 k.area(),
                 k.color(0, 0, 0),
                 k.outline(2, k.rgb(255, 255, 255)), // Set the outline color to red
@@ -363,7 +363,7 @@ const Game = () => {
                     font: "pixels", // Use the pixel font
                     size: 20, // Adjust the font size as needed
                 }),
-                k.pos((k.width() / 2) + 65, (k.height() / 2) + 175),
+                k.pos((k.width() / 2) + 65, (k.height() / 2) + 145),
                 k.anchor("center"),
             ]);
 
@@ -373,7 +373,7 @@ const Game = () => {
                 // add a parent background object
                 const btn = add([
                     rect(150, 80),
-                    pos((k.width() / 2), (k.height() / 2) + 80),
+                    pos((k.width() / 2), (k.height() / 2) + 50),
                     area(),
                     scale(1),
                     anchor("center"),
