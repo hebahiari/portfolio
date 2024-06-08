@@ -15,7 +15,7 @@ const About = () => {
                     <a href='https://github.com/hebahiari' target='_blank'><FaGithub /></a>
                     <a href='https://www.linkedin.com/in/hebadev/' target='_blank'><FaLinkedin /></a>
                     <a href='https://www.instagram.com/capturingflow/' target='_blank'><FaInstagram /></a>
-                    <a href='https://tinyurl.com/ys43edyr' target='_blank'><FaRegFilePdf /></a>
+                    <a href='https://tinyurl.com/4ujsnk3n' target='_blank'><FaRegFilePdf /></a>
 
                 </div>
                 <div className='aboutDesc cardBorder'>

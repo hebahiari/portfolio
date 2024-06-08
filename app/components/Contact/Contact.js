@@ -16,9 +16,6 @@ const Contact = () => {
                         <IoMailOutline /> <p>hebahiary@gmail.com</p>
                     </div>
                     <div className='infoItem'>
-                        <MdOutlinePhoneEnabled /> <p>650-495-4214</p>
-                    </div>
-                    <div className='infoItem'>
                         <FaLinkedin /> <a href="https://www.linkedin.com/in/hebadev/" target="_blank"><p>linkedin.com/in/hebadev</p></a>
                     </div>
                 </div>
