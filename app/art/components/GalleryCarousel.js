@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react';
-import './art.css';
+import './GalleryCarousel.css';
 
 
 const GalleryCarousel = () => {
