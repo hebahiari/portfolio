@@ -3,7 +3,7 @@ import GalleryCarousel from './components/GalleryCarousel'
 
 const ArtPage = () => {
     return (
-        <div>
+        <div className='artContainer'>
             <GalleryCarousel />
         </div>
     )
