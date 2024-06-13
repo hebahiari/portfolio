@@ -171,28 +171,34 @@ const projects = [
 ];
 
 const Projects = () => {
-
-    const [index, setIndex] = useState(0)
+    const [index, setIndex] = useState(0);
+    const [loading, setLoading] = useState(false);
 
     const prevProject = () => {
+        setLoading(true);
         if (index == 0) {
-            setIndex(projects.length - 1)
+            setIndex(projects.length - 1);
         } else {
-            setIndex((current) => current - 1)
+            setIndex((current) => current - 1);
         }
     }
 
     const nextProject = () => {
+        setLoading(true);
         if (index == projects.length - 1) {
-            setIndex(0)
+            setIndex(0);
         } else {
-            setIndex((current) => current + 1)
+            setIndex((current) => current + 1);
         }
+    }
+
+    const handleImageLoad = () => {
+        setLoading(false);
     }
 
     return (
         <div className='projects' id='projects'>
-            <ProjectsMenu projects={projects} setIndex={setIndex} />
+            <ProjectsMenu projects={projects} setIndex={(newIndex) => { setLoading(true); setIndex(newIndex); }} />
             <div className='projectsNav'>
                 <button className='projectsIndex projectIndexArrow' onClick={prevProject}>
                     &#60;
@@ -204,11 +210,28 @@ const Projects = () => {
                     &#62;
                 </button>
             </div>
-            <div className='projectsContainer' >
+            <div className='projectsContainer'>
                 <div className='projectDisplay'>
                     <a href={projects[index].links[1]} target='_blank'>
-                        <div className='projectImage'>
-                            <Image className='scaled' layout='responsive' width={100} height={100} src={projects[index].gif} />
+                        {loading && <div className='projectImage'>
+                            <Image
+                                className='scaled'
+                                layout='responsive'
+                                width={100}
+                                height={100}
+                                src={'/img/portfolio/gifs/loading.gif'}
+                            />
+                        </div>}
+                        <div className='projectImage' style={{ display: loading ? 'none' : 'block' }}>
+                            <Image
+                                className='scaled'
+                                // key={index}
+                                layout='responsive'
+                                width={100}
+                                height={100}
+                                src={projects[index].gif}
+                                onLoad={handleImageLoad}
+                            />
                         </div>
                         <div className='projectImage'>
                             <Image layout='responsive' width={100} height={100} src='/img/laptop.png' />
@@ -240,7 +263,6 @@ const Projects = () => {
                     </div>
                 </div>
             </div>
-
         </div>
     )
 }
