@@ -6,6 +6,7 @@ import { IoMdLink } from "react-icons/io";
 import Image from 'next/image';
 import { useState } from 'react';
 import ProjectsMenu from './ProjectsMenu';
+import { useEffect } from 'react';
 
 const projects = [
     {
@@ -174,20 +175,21 @@ const Projects = () => {
     const [index, setIndex] = useState(0);
     const [loading, setLoading] = useState(false);
 
+
     const prevProject = () => {
-        setLoading(true);
         if (index == 0) {
             setIndex(projects.length - 1);
         } else {
+            setLoading(true);
             setIndex((current) => current - 1);
         }
     }
 
     const nextProject = () => {
-        setLoading(true);
         if (index == projects.length - 1) {
             setIndex(0);
         } else {
+            setLoading(true);
             setIndex((current) => current + 1);
         }
     }
@@ -220,12 +222,12 @@ const Projects = () => {
                                 width={100}
                                 height={100}
                                 src={'/img/portfolio/gifs/loading.gif'}
+                                style={{ 'transform': 'scaleY(1.1)' }}
                             />
                         </div>}
                         <div className='projectImage' style={{ display: loading ? 'none' : 'block' }}>
                             <Image
                                 className='scaled'
-                                // key={index}
                                 layout='responsive'
                                 width={100}
                                 height={100}
