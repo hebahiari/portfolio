@@ -1,10 +1,11 @@
 import React from 'react'
 import GalleryCarousel from './components/GalleryCarousel'
+import './artPage.css'
 
 const ArtPage = () => {
     return (
         <div className='artContainer'>
-            <GalleryCarousel />
+            Under construction
         </div>
     )
 }
