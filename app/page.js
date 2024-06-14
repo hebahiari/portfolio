@@ -1,13 +1,13 @@
 import Image from "next/image";
-import Navbar from "./components/Navbar/Navbar";
-import Hero from "./components/Hero/Hero";
-import About from "./components/About/About";
-import Projects from "./components/Projects/Projects";
-import Contact from "./components/Contact/Contact";
-import Footer from "./components/Footer/Footer";
-import Background from "./components/Background/Background";
-import RotateOnHover from "./components/Hero/RotateOnHover/RotateOnHover";
-import MiniNav from "./components/Navbar/MiniNav";
+import Navbar from "./dev/Navbar/Navbar";
+import Hero from "./dev/Hero/Hero";
+import About from "./dev/About/About";
+import Projects from "./dev/Projects/Projects";
+import Contact from "./dev/Contact/Contact";
+import Footer from "./dev/Footer/Footer";
+import Background from "./dev/Background/Background";
+import RotateOnHover from "./dev/Hero/RotateOnHover/RotateOnHover";
+import MiniNav from "./dev/Navbar/MiniNav";
 
 export default function Home() {
   return (
