@@ -1,10 +1,11 @@
 import React from 'react'
-import './artPage.css'
+import './ArtPage.css'
+import Navbar from './components/Navbar/Navbar'
 
 const ArtPage = () => {
     return (
         <div className='artContainer'>
-            Under construction
+            <Navbar />
         </div>
     )
 }
