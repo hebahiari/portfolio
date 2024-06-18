@@ -5,20 +5,16 @@
   
   .carousel-cell {
     width: 66%;
-    height: 200px;
-    margin-right: 10px;
-    background: #8C8;
-    border-radius: 5px;
+    height: 600px;
+    background: rgb(227, 227, 227);
     counter-increment: carousel-cell;
   }
   
-  /* cell number */
-  .carousel-cell:before {
-    display: block;
-    text-align: center;
-    content: counter(carousel-cell);
-    line-height: 200px;
-    font-size: 80px;
-    color: white;
+  .frame {
+    position: absolute;
+    border: 2px solid #000; 
+    background-color: #fff; 
+    box-sizing: border-box;
+    overflow: hidden;
+    pointer-events: none; 
   }
-  

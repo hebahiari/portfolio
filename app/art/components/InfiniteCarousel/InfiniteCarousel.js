@@ -12,6 +12,8 @@ const InfiniteCarousel = () => {
         const flkty = new Flickity(carouselRef.current, {
             freeScroll: true,
             wrapAround: true,
+            cellAlign: 'left',
+            contain: true,
         });
 
         const resizeListener = () => flkty.resize();
@@ -22,6 +24,7 @@ const InfiniteCarousel = () => {
             window.removeEventListener('resize', resizeListener);
         };
     }, []);
+
 
     return (
         <div className="carousel" ref={carouselRef}>
