@@ -9,22 +9,23 @@ const InfiniteCarousel = () => {
     const carouselRef = useRef(null);
 
     useEffect(() => {
-        const flkty = new Flickity(carouselRef.current, {
-            freeScroll: true,
-            wrapAround: true,
-            cellAlign: 'left',
-            contain: true,
-        });
+        if (typeof window !== 'undefined') {
+            const flkty = new Flickity(carouselRef.current, {
+                freeScroll: true,
+                wrapAround: true,
+                cellAlign: 'left',
+                contain: true,
+            });
 
-        const resizeListener = () => flkty.resize();
-        window.addEventListener('resize', resizeListener);
+            const resizeListener = () => flkty.resize();
+            window.addEventListener('resize', resizeListener);
 
-        return () => {
-            flkty.destroy();
-            window.removeEventListener('resize', resizeListener);
-        };
+            return () => {
+                flkty.destroy();
+                window.removeEventListener('resize', resizeListener);
+            };
+        }
     }, []);
-
 
     return (
         <div className="carousel" ref={carouselRef}>

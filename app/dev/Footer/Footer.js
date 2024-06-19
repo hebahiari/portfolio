@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import './Footer.css'
-import ToggleSwitch from '@/app/components/Toggle/Toggle'
+// import ToggleSwitch from '@/app/components/Toggle/Toggle'
 
 const Footer = () => {
     return (

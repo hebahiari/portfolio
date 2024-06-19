@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import './ArtPage.css'
 import Navbar from './components/Navbar/Navbar'
