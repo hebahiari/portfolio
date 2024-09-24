@@ -24,7 +24,7 @@ const projects = [
         ],
         tags: ["JavaScript", "React", "Express", "Node.js", "Postgres"],
         image: "/img/portfolio/7.PNG",
-        gif: "/img/portfolio/gifs/petsgram.gif",
+        gif: "/img/portfolio/gifs/petsgram.mp4",
         links: [
             "https://github.com/hebahiari/petsgram",
             "https://petsgram.hebahiari.com/",
@@ -44,7 +44,7 @@ const projects = [
         ],
         tags: ["Next.js", "TypeScript", "Prisma", "Radix UI"],
         image: "/img/portfolio/10.png",
-        gif: "/img/portfolio/gifs/issuetracker.gif",
+        gif: "/img/portfolio/gifs/issuetracker.mp4",
         links: [
             "https://github.com/hebahiari/issue-tracker",
             "https://issuetracker.hebahiari.com/",
@@ -61,7 +61,7 @@ const projects = [
         ],
         tags: ["Next.js", "TypeScript", "OpenAI", "Pinecone", "Clerk"],
         image: "/img/portfolio/11.png",
-        gif: "/img/portfolio/gifs/smartnotes.gif",
+        gif: "/img/portfolio/gifs/smartnotes.mp4",
         links: [
             "https://github.com/hebahiari/ai-notes",
             "https://smartnotes.hebahiari.com/",
@@ -81,7 +81,7 @@ const projects = [
         ],
         tags: ["JavaScript", "React", "Redux", "SCSS", "Strapi", "Stripe"],
         image: "/img/portfolio/5.jpg",
-        gif: "/img/portfolio/gifs/techwearco.gif",
+        gif: "/img/portfolio/gifs/techwearco.mp4",
         links: [
             "https://github.com/hebahiari/ecommerce",
             "https://techwearco.hebahiari.com/",
@@ -101,7 +101,7 @@ const projects = [
         ],
         tags: ["Python", "PyTorch", "Matplotlib", "PIL", "React"],
         image: "/img/portfolio/9.png",
-        gif: "/img/portfolio/gifs/imageclassifier.gif",
+        gif: "/img/portfolio/gifs/imageclassifier.mp4",
         links: [
             "https://github.com/hebahiari/flower-classifier",
             "https://flowers.hebahiari.com/",
@@ -123,7 +123,7 @@ const projects = [
         ],
         tags: ["JavaScript", "Next.js", "React", "MongoDB"],
         image: "/img/portfolio/TechTopic.png",
-        gif: "/img/portfolio/gifs/techtopic.gif",
+        gif: "/img/portfolio/gifs/techtopic.mp4",
         links: [
             "https://github.com/hebahiari/techtopic",
             "https://techtopic.hebahiari.com/",
@@ -141,7 +141,7 @@ const projects = [
         ],
         tags: ["TypeScript", "React", "MUI"],
         image: "/img/portfolio/8.PNG",
-        gif: "/img/portfolio/gifs/trivia.gif",
+        gif: "/img/portfolio/gifs/trivia.mp4",
         links: [
             "https://github.com/hebahiari/quiz-app",
             "https://trivia.hebahiari.com/",
@@ -163,7 +163,7 @@ const projects = [
         ],
         tags: ["JavaScript", "React", "Node.js", "Express", "Knex"],
         image: "/img/portfolio/1.jpg",
-        gif: "/img/portfolio/gifs/petsgram.gif",
+        gif: "/img/portfolio/gifs/petsgram.mp4",
         links: [
             "https://github.com/hebahiari/restaurant-reservation",
             "https://booked.hebahiari.com/",
@@ -214,31 +214,41 @@ const Projects = () => {
             </div>
             <div className='projectsContainer'>
                 <div className='projectDisplay'>
-                    <a href={projects[index].links[1]} target='_blank'>
-                        {loading && <div className='projectImage'>
-                            <Image
+                        {loading && (
+                            <div className='projectVideo'>
+                                <video
+                                    className='scaled'
+                                    width="100"
+                                    height="100"
+                                    autoPlay
+                                    loop
+                                    muted
+                                    key={'loading'}  // Adding a key for the loading state
+                                    onCanPlayThrough={handleImageLoad}
+                                >
+                                    <source src={'/img/portfolio/gifs/loading.mp4'} type="video/mp4" />
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        )}
+                        <div className='projectVideo' style={{ display: loading ? 'none' : 'block' }}>
+                            <video
                                 className='scaled'
-                                layout='responsive'
-                                width={100}
-                                height={100}
-                                src={'/img/portfolio/gifs/loading.gif'}
-                                style={{ 'transform': 'scaleY(1.1)' }}
-                            />
-                        </div>}
-                        <div className='projectImage' style={{ display: loading ? 'none' : 'block' }}>
-                            <Image
-                                className='scaled'
-                                layout='responsive'
-                                width={100}
-                                height={100}
-                                src={projects[index].gif}
-                                onLoad={handleImageLoad}
-                            />
+                                width="100%"
+                                height="100%"
+                                autoPlay
+                                loop
+                                muted
+                                key={projects[index].gif}  // Adding key to force re-render when index changes
+                                onCanPlayThrough={handleImageLoad}
+                            >
+                                <source src={projects[index].gif} type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
                         </div>
                         <div className='projectImage'>
                             <Image layout='responsive' width={100} height={100} src='/img/laptop.png' />
                         </div>
-                    </a>
                 </div>
                 <div className='projectDetails'>
                     <div className='projectDesc'>
@@ -267,6 +277,8 @@ const Projects = () => {
             </div>
         </div>
     )
+    
+    
 }
 
 export default Projects
