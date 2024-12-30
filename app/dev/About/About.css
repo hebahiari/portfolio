@@ -56,7 +56,12 @@
     overflow: hidden;
     min-width: 250px;
     order: -1;
+    height: 250px;
+    width: 250px;
+    max-width: 75%;
 }
+
+
 
 .aboutStack{
     display: flex;
