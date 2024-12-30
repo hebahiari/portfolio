@@ -214,43 +214,43 @@ const Projects = () => {
             </div>
             <div className='projectsContainer'>
                 <div className='projectDisplay'>
-                        {loading && (
-                            <div className='projectVideo'>
-                                <video
-                                    className='scaled'
-                                    width="100"
-                                    height="100"
-                                    autoPlay
-                                    loop
-                                    muted
-                                    key={'loading'}  // Adding a key for the loading state
-                                    onCanPlayThrough={handleImageLoad}
-                                >
-                                    <source src={'/img/portfolio/gifs/loading.mp4'} type="video/mp4" />
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
-                        )}
-                        <div className='projectVideo' style={{ display: loading ? 'none' : 'block' }}>
+                    {loading && (
+                        <div className='projectVideo'>
                             <video
                                 className='scaled'
-                                width="100%"
-                                height="100%"
+                                width="100"
+                                height="100"
                                 autoPlay
                                 loop
                                 muted
-                                key={projects[index].gif}
+                                key={'loading'}  // Adding a key for the loading state
                                 onCanPlayThrough={handleImageLoad}
                             >
-                                <source src={projects[index].gif} type="video/mp4" />
+                                <source src={'/img/portfolio/gifs/loading.mp4'} type="video/mp4" />
                                 Your browser does not support the video tag.
                             </video>
                         </div>
-                        <div className='projectImage'>
-                            <a href={projects[index].links[1]} target='_blank'>
+                    )}
+                    <div className='projectVideo' style={{ display: loading ? 'none' : 'block' }}>
+                        <video
+                            className='scaled'
+                            width="100%"
+                            height="100%"
+                            autoPlay
+                            loop
+                            muted
+                            key={projects[index].gif}
+                            onCanPlayThrough={handleImageLoad}
+                        >
+                            <source src={projects[index].gif} type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div className='projectImage'>
+                        <a href={projects[index].links[1]} target='_blank'>
                             <Image layout='responsive' width={100} height={100} src='/img/laptop.png' />
-                            </a>
-                        </div>
+                        </a>
+                    </div>
                 </div>
                 <div className='projectDetails'>
                     <div className='projectDesc'>
@@ -267,11 +267,11 @@ const Projects = () => {
                             {projects[index].tags.map((tag, index) => <div key={index} className='projectTag'>{tag}</div>)}
                         </div>
                         <div className='projectLinks'>
-                            <a href={projects[index].links[0]} className='projectLink' target='_blank'>
-                                <FiGithub />
-                            </a>
                             <a href={projects[index].links[1]} className='projectLink' target='_blank'>
-                                <IoMdLink />
+                                Click to try
+                            </a>
+                            <a href={projects[index].links[0]} className='projectLinkIcon' target='_blank'>
+                                <FiGithub />
                             </a>
                         </div>
                     </div>
@@ -279,8 +279,8 @@ const Projects = () => {
             </div>
         </div>
     )
-    
-    
+
+
 }
 
 export default Projects
