@@ -239,7 +239,7 @@ const Projects = () => {
                                 autoPlay
                                 loop
                                 muted
-                                key={projects[index].gif}  // Adding key to force re-render when index changes
+                                key={projects[index].gif}
                                 onCanPlayThrough={handleImageLoad}
                             >
                                 <source src={projects[index].gif} type="video/mp4" />
@@ -247,7 +247,9 @@ const Projects = () => {
                             </video>
                         </div>
                         <div className='projectImage'>
+                            <a href={projects[index].links[1]} target='_blank'>
                             <Image layout='responsive' width={100} height={100} src='/img/laptop.png' />
+                            </a>
                         </div>
                 </div>
                 <div className='projectDetails'>
