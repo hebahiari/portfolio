@@ -16,7 +16,7 @@ export default function Home() {
       <main className='mainContainer'>
         <MiniNav />
         <Navbar />
-        <section>
+        <section id='hero'>
           <RotateOnHover>
             <Hero />
           </RotateOnHover>
