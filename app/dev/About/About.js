@@ -22,7 +22,7 @@ const About = () => {
                     <div className='yellow' style={{ fontSize: 'larger' }}>Hello,</div>
                     <div className='lightblue' style={{ fontSize: 'x-large' }}>I'm Heba!</div>
                     <div className='orange typewriter'>Im a <TypeWriter /></div>
-                    <div>Fullstack engineer with a focus on developing and implementing web-based solutions, maintaining and updating web applications, and improving the user experience.</div>
+                    <div>Full Stack Engineer with 3 years of experience delivering scalable web applications across diverse industries. Skilled in modern frontend and backend technologies. Adept at collaborating with teams, optimizing performance, and crafting user-focused designs that elevate functionality and user experience.</div>
 
                 </div>
                 <div className='aboutImg cardBorder'>

@@ -23,6 +23,8 @@ const projects = [
             "Explore Page/Following Page",
         ],
         tags: ["JavaScript", "React", "Express", "Node.js", "Postgres"],
+        frontend: ["JavaScript", "React"],
+        backend: ["Express", "Node.js", "Postgres"],
         image: "/img/portfolio/7.PNG",
         gif: "/img/portfolio/gifs/petsgram.mp4",
         links: [
@@ -43,6 +45,8 @@ const projects = [
             "Dashboard displaying a summary of existing Issues"
         ],
         tags: ["Next.js", "TypeScript", "Prisma", "Radix UI"],
+        frontend: ["Next.js", "TypeScript"],
+        backend: ['Prisma'],
         image: "/img/portfolio/10.png",
         gif: "/img/portfolio/gifs/issuetracker.mp4",
         links: [
@@ -60,6 +64,8 @@ const projects = [
             "Login/Logout using Clerk",
         ],
         tags: ["Next.js", "TypeScript", "OpenAI", "Pinecone", "Clerk"],
+        frontend: ["Next.js", "TypeScript"],
+        backend: ["OpenAI", "Pinecone", "Clerk"],
         image: "/img/portfolio/11.png",
         gif: "/img/portfolio/gifs/smartnotes.mp4",
         links: [
@@ -80,6 +86,8 @@ const projects = [
             "Sort items by price (lowest to highest, highest to lowest)",
         ],
         tags: ["JavaScript", "React", "Redux", "SCSS", "Strapi", "Stripe"],
+        frontend: ["JavaScript", "React", "Redux", "SCSS"],
+        backend: ["Strapi", "Stripe"],
         image: "/img/portfolio/5.jpg",
         gif: "/img/portfolio/gifs/techwearco.mp4",
         links: [
@@ -100,6 +108,8 @@ const projects = [
 
         ],
         tags: ["Python", "PyTorch", "Matplotlib", "PIL", "React"],
+        frontend: ["React", "MUI"],
+        backend: ["Python", "PyTorch", "Matplotlib", "PIL"],
         image: "/img/portfolio/9.png",
         gif: "/img/portfolio/gifs/imageclassifier.mp4",
         links: [
@@ -122,6 +132,8 @@ const projects = [
             "Dark/Light mode",
         ],
         tags: ["JavaScript", "Next.js", "React", "MongoDB"],
+        frontend: ["JavaScript", "Next.js", "React"],
+        backend: ["MongoDB"],
         image: "/img/portfolio/TechTopic.png",
         gif: "/img/portfolio/gifs/techtopic.mp4",
         links: [
@@ -140,6 +152,7 @@ const projects = [
             "Restart",
         ],
         tags: ["TypeScript", "React", "MUI"],
+        frontend: ["TypeScript", "React", "MUI"],
         image: "/img/portfolio/8.PNG",
         gif: "/img/portfolio/gifs/trivia.mp4",
         links: [
@@ -162,8 +175,10 @@ const projects = [
             "Includes built in validation to make sure reservations are at valid times",
         ],
         tags: ["JavaScript", "React", "Node.js", "Express", "Knex"],
+        frontend: ["JavaScript", "React"],
+        backend: ["Node.js", "Express", "Knex"],
         image: "/img/portfolio/1.jpg",
-        gif: "/img/portfolio/gifs/petsgram.mp4",
+        gif: "/img/portfolio/gifs/booked.mp4",
         links: [
             "https://github.com/hebahiari/restaurant-reservation",
             "https://booked.hebahiari.com/",
@@ -251,6 +266,9 @@ const Projects = () => {
                             <Image layout='responsive' width={100} height={100} src='/img/laptop.png' />
                         </a>
                     </div>
+                    {/* <a href={projects[index].links[1]} className='projectLinkButton' target='_blank'>
+                        Visit website
+                    </a> */}
                 </div>
                 <div className='projectDetails'>
                     <div className='projectDesc'>
@@ -261,19 +279,44 @@ const Projects = () => {
                             </a>
                         </h3>
                         <div className='projectInfo'>
-                            {projects[index].desc.join(" - ")}
+                            <ul>{projects[index].desc.map((desc) => (<li>{desc}</li>))}</ul>
                         </div>
-                        <div className='projectTags'>
-                            {projects[index].tags.map((tag, index) => <div key={index} className='projectTag'>{tag}</div>)}
+                        {/* <div className='projectTags'>
+                            {projects[index].tags?.map((tag, index) => <div key={index} className='projectTag'>{tag}</div>)}
+                        </div> */}
+
+                        <div >
+                            {projects[index].frontend &&
+                                <div className='projectTags' style={{ paddingBottom: '10px' }}>
+                                    frontend: {projects[index].frontend?.map((tag, index) => <div key={index} className='projectTag'>{tag}</div>)}
+                                </div>
+                            }
+                            {projects[index].backend &&
+                                <div className='projectTags'>
+                                    backend: {projects[index].backend?.map((tag, index) => <div key={index} className='projectTag'>{tag}</div>)}
+                                </div>
+                            }
+
+                            <div className='projectLinks'>
+                                <a href={projects[index].links[2]} className='projectLinkIcon' target='_blank'>
+                                    <IoMdLink />
+                                </a>
+                                <a href={projects[index].links[0]} className='projectLinkIcon' target='_blank'>
+                                    <FiGithub />
+                                </a>
+                            </div>
                         </div>
-                        <div className='projectLinks'>
-                            <a href={projects[index].links[1]} className='projectLink' target='_blank'>
-                                Click to try
+
+
+                        {/* <div className='projectLinks'>
+                            <a href={projects[index].links[2]} className='projectLinkIcon' target='_blank'>
+                                <IoMdLink />
                             </a>
                             <a href={projects[index].links[0]} className='projectLinkIcon' target='_blank'>
                                 <FiGithub />
                             </a>
-                        </div>
+                        </div> */}
+
                     </div>
                 </div>
             </div>
