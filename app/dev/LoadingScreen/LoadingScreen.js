@@ -10,7 +10,7 @@ function LoadingScreen() {
     useEffect(() => {
         const timer = setTimeout(() => {
             setLoading(false);
-        }, 1200)
+        }, 1000)
 
         return () => clearTimeout(timer);
     }, [])
@@ -18,14 +18,14 @@ function LoadingScreen() {
     return (
         <div className={`loading-screen ${loading ? "loading" : "loaded"}`}>
             <div className="loading-content">
-                <div className='tab'>
-                    <div style={{display: 'flex', alignItems:'center'}}>
-                        <span className='darkblue' style={{marginRight: '5px'}}>&#60;div</span>
-                        <span className='lightblue'>    className</span>
+                <div className='tab' style={{marginLeft: 0}}>
+                    <div style={{display: 'flex', alignItems:'center', flexWrap: 'wrap'}}>
+                        <span className='darkblue'>&#60;div</span>
+                        <span className='lightblue'>&nbsp;className</span>
                         <span className='white'>=</span>
                         <span className='orange'>'loading'</span>
                         <span className='darkblue'>&#62;</span>
-                        <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+                        <div class="main-lds-ring"><div></div><div></div><div></div><div></div></div>
                         <span className='darkblue'>&#60;/div&#62;
                         </span>
                     </div>

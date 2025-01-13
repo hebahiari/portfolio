@@ -13,8 +13,8 @@ import LoadingScreen from "./dev/LoadingScreen/LoadingScreen";
 export default function Home() {
   return (
     <div style={{ position: 'relative' }}>
-      <Background />
       <LoadingScreen />
+      <Background />
       <main className='mainContainer'>
         <MiniNav />
         <Navbar />
