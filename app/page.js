@@ -8,11 +8,13 @@ import Footer from "./dev/Footer/Footer";
 import Background from "./dev/Background/Background";
 import RotateOnHover from "./dev/Hero/RotateOnHover/RotateOnHover";
 import MiniNav from "./dev/Navbar/MiniNav";
+import LoadingScreen from "./dev/LoadingScreen/LoadingScreen";
 
 export default function Home() {
   return (
     <div style={{ position: 'relative' }}>
       <Background />
+      <LoadingScreen />
       <main className='mainContainer'>
         <MiniNav />
         <Navbar />

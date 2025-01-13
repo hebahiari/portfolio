@@ -1,3 +1,4 @@
+
 import { IoMailOutline } from "react-icons/io5";
 import { MdOutlinePhoneEnabled } from "react-icons/md";
 import { FaLinkedin } from "react-icons/fa";
@@ -21,7 +22,12 @@ const Contact = () => {
                 </div>
             </div>
             <div className='gameContainer cardBorder'>
-                <KaboomGame />
+                <div className="gameLoading">
+                <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+                </div>
+                <div className="game">
+                <KaboomGame/>
+                </div>
             </div>
         </div>
     )
