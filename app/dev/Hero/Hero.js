@@ -10,7 +10,8 @@ const Hero = () => {
                     <span className='lightblue'> className</span>
                     <span className='white'>=</span>
                     <span className='orange'>'title'</span>
-                    &#62;
+                    <span className='darkblue'>&#62;</span>
+
                     <div className='portfolio'>
                         <h1>
                             Portfolio
@@ -23,7 +24,7 @@ const Hero = () => {
                     <span className='lightblue'> className</span>
                     <span className='white'>=</span>
                     <span className='orange'>'developer'</span>
-                    &#62;
+                    <span className='darkblue'>&#62;</span>
                     <div className='portfolio'>
                         <h2>
                             Heba A.

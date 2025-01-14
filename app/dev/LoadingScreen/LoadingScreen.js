@@ -25,7 +25,7 @@ function LoadingScreen() {
                         <span className='white'>=</span>
                         <span className='orange'>'loading'</span>
                         <span className='darkblue'>&#62;</span>
-                        <div class="main-lds-ring"><div></div><div></div><div></div><div></div></div>
+                        <div className="main-lds-ring"><div></div><div></div><div></div><div></div></div>
                         <span className='darkblue'>&#60;/div&#62;
                         </span>
                     </div>

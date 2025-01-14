@@ -26,7 +26,7 @@ const About = () => {
 
                 </div>
                 <div className='aboutImg cardBorder'>
-                    <Image src='/img/portrait.jpeg' layout='responsive' height={300}  width={300}/>
+                    <Image src='/img/portrait.jpeg'alt='portrait' layout='responsive' height={300}  width={300}/>
                 </div>
             </div>
             <AboutStack />

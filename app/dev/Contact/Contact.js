@@ -23,7 +23,7 @@ const Contact = () => {
             </div>
             <div className='gameContainer cardBorder'>
                 <div className="gameLoading">
-                <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+                <div className="lds-ring"><div></div><div></div><div></div><div></div></div>
                 </div>
                 <div className="game">
                 <KaboomGame/>

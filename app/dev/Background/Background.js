@@ -3,9 +3,9 @@ import './Background.css'
 const Background = () => {
     return (
         <div className='background'>
-            <div class="gradient one"></div>
-            <div class="gradient two"></div>
-            <div class="gradient three"></div>
+            <div className="gradient one"></div>
+            <div className="gradient two"></div>
+            <div className="gradient three"></div>
         </div>
     )
 }
