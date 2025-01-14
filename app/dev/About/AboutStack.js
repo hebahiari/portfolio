@@ -5,9 +5,8 @@ const AboutStack = () => {
         'Next.js, React, TypeScript, JavaScript',
         'Responsive Design, Mobile First Development',
         'State Management, Routing',
-        'Accessibility Standards (WCAG)',
+        'UI/UX Design, Accessibility Standards (WCAG)',
         'Performance Optimization, SEO',
-        'UI/UX Design',
         'RESTful APIs Integration'
     ];
 
