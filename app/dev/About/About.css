@@ -188,6 +188,9 @@
   }
   
   @media (min-width: 1500px) {
+    .aboutContainer{
+        max-width: 1400px;
+    }
     .aboutDesc{
         gap: 8px;
     }

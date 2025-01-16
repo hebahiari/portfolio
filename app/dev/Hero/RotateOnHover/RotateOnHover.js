@@ -1,6 +1,7 @@
 'use client'
 import './RotateOnHover.css';
 import React, { useEffect } from 'react';
+import { IoIosArrowDown } from 'react-icons/io';
 
 const RotateOnHover = ({ children }) => {
     useEffect(() => {
@@ -43,6 +44,7 @@ const RotateOnHover = ({ children }) => {
             <div className="tilt-box">
                 {children}
             </div>
+            <div className='scroll'><IoIosArrowDown/></div>
         </div>
     );
 };

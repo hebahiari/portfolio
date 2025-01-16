@@ -102,6 +102,30 @@ button {
   width: 100%;
 }
 
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f100;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #30455e;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #30455e;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #30455e #f1f1f100;
+}
+
+
 
 @media (min-width: 800px) {
   .mainContainer{
@@ -132,4 +156,7 @@ button {
     position: relative;
   }
 
+  * {
+    scrollbar-width: none;
+  }
 }

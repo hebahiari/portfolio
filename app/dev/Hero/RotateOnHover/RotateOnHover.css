@@ -4,6 +4,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+
+.scroll {
+    display: none;
 }
 
 .tilt-box {
@@ -18,5 +23,13 @@
 @media (min-width: 1400px) {
     .tilt-container {
         min-height: 100vh;
+    }
+
+    .scroll{
+        display: block;
+        position: absolute;
+        bottom: 20px;
+        color: white;
+        font-size: 40px;
     }
   }

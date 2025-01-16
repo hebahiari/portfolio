@@ -150,6 +150,10 @@ margin-top: -20px;
 display: none;
 }
 
+.konva{
+    position: absolute;
+    z-index: 10;
+}
 
 
 
