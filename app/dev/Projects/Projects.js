@@ -17,7 +17,10 @@ const projects = [
         type: "(Research Platform)",
 
         desc: [
-            "",
+            'Built Responsive UIs: Developed cross-device compatible interfaces with Nextjs and TypeScript.',
+            'Managed State: Utilized Redux or Context API for efficient state management.',
+            'Integrated APIs: Connected frontend to backend for dynamic data handling.',
+            'Optimized Performance: Improved load times via lazy loading and code splitting.',
         ],
         tags: ["Nextjs", "TypeScript", "MUI"],
         frontend: [],
@@ -30,13 +33,11 @@ const projects = [
         name: "Petsgram",
         type: "(Social media website)",
         desc: [
-            "Sign in/Sign up",
-            "Add Posts/Comments/Likes",
-            "Delete posts/comments",
-            "Follow/Unfollow other users",
-            "Search Users",
-            "Notifications",
-            "Explore Page/Following Page",
+            "Authentication: Implemented sign-in/sign-up functionality",
+            "Content Management: Enabled adding, deleting, and interacting with posts, comments, and likes",
+            "Implemented searching, sorting, and notifications",
+            "Built Responsive UIs: Developed device-friendly interfaces with React and TypeScript",
+            "UI/UX Improvements: Designed intuitive layouts with a focus on user experience",
         ],
         tags: ["JavaScript", "React", "Express", "Node.js", "Postgres"],
         frontend: ["JavaScript", "React"],
@@ -53,7 +54,10 @@ const projects = [
         name: "Screen Indie",
         type: "(Streaming Platform)",
         desc: [
-            "",
+            'Built Responsive UIs: Developed cross-device compatible interfaces with Nextjs and TypeScript.',
+            'Managed State: Utilized Redux or Context API for efficient state management.',
+            'Integrated APIs: Connected frontend to backend for dynamic data handling.',
+            'Optimized Performance: Improved load times via lazy loading and code splitting.',
         ],
         tags: ["Next.js", "TypeScript", "OpenAI", "Pinecone", "Clerk"],
         frontend: [],
@@ -70,12 +74,11 @@ const projects = [
         name: "TechWearCo",
         type: "(E-commerce website)",
         desc: [
-            "Explore items by category",
-            "Add items to cart",
-            "Remove items from cart",
-            "Checkout",
-            "Filter items by price or category",
-            "Sort items by price (lowest to highest, highest to lowest)",
+            "Developed a full-stack e-commerce platform with features for browsing, filtering, and sorting items.",
+            "Implemented cart functionality, including adding, removing, and managing items.",
+            "Built a secure checkout process integrated with Stripe for payments.",
+            "Designed an intuitive user interface using React, Redux, and SCSS.",
+            "Created a robust backend with Strapi to manage product data and user orders."
         ],
         tags: ["JavaScript", "React", "Redux", "SCSS", "Strapi", "Stripe"],
         frontend: ["JavaScript", "React", "Redux", "SCSS"],
@@ -93,9 +96,12 @@ const projects = [
         name: "SmartNotes",
         type: "(Note App with AI Integration)",
         desc: [
-            "Add, Update and Delete Notes",
-            "ChatBot that can analyze questions and find related notes",
-            "Login/Logout using Clerk",
+            "Created a note-taking app with features to add, update, and delete notes.",
+            "Integrated an AI-powered chatbot to analyze user questions and retrieve related notes.",
+            "Implemented user authentication with Clerk for seamless login and logout functionality.",
+            "Leveraged OpenAI to enable intelligent note search capabilities based on user input.",
+            "Used Pinecone for efficient and scalable vector search to find relevant notes.",
+            "Developed the frontend using Next.js and TypeScript to ensure a fast, type-safe experience."
         ],
         tags: ["Next.js", "TypeScript", "OpenAI", "Pinecone", "Clerk"],
         frontend: ["Next.js", "TypeScript"],
@@ -112,12 +118,12 @@ const projects = [
         name: "IssueTracker",
         type: "(Issue Tracker website)",
         desc: [
-            "Add, Update and Delete issues",
-            "Assign issues to different users",
-            'Login/Logout using Google Auth',
-            'Filter/Sort issues by name, date and status',
-            "Add comments to issues",
-            "Dashboard displaying a summary of existing Issues"
+            "Developed an issue tracker app allowing users to add, update, and delete issues.",
+            "Enabled issue assignment to different users for better task management.",
+            "Integrated Google Authentication for secure login and logout functionality.",
+            "Implemented filters and sorting for issues by name, date, and status.",
+            "Allowed users to add comments to issues for collaboration and tracking.",
+            "Built a dashboard displaying an overview and summary of all existing issues."
         ],
         tags: ["Next.js", "TypeScript", "Prisma", "Radix UI"],
         frontend: ["Next.js", "TypeScript"],
@@ -156,7 +162,11 @@ const projects = [
         name: "Payco",
         type: "(Fintech Application)",
         desc: [
-            "User Profile, Authentication/Authorization",
+            "Developed frontend and backend for a fintech solution using TypeScript and Next.js.",
+            "Built features for user authentication, dashboards, and global trade invoicing.",
+            "Created backend systems with RESTful APIs for large-scale financial data processing.",
+            "Designed optimized PostgreSQL database solutions for high-volume transactions.",
+            "Collaborated via Git and code reviews for efficient, scalable code."
         ],
         tags: ["React", "TypeScript", "Nodejs", "Express", "MUI"],
         frontend: [],
@@ -384,12 +394,12 @@ const Projects = () => {
                         </video>
                     </div>
                     <div className='projectImage'>
-                        {projects[index].links ? 
-                        <a href={projects[index].links ? projects[index].links[1] : ''} target='_blank'>
-                            <Image layout='responsive' alt='laptop' width={100} height={100} src='/img/laptop.png' />
-                        </a> 
-                        : 
-                        <Image layout='responsive' alt='laptop' width={100} height={100} src='/img/laptop.png' />}
+                        {projects[index].links ?
+                            <a href={projects[index].links ? projects[index].links[1] : ''} target='_blank'>
+                                <Image layout='responsive' alt='laptop' width={100} height={100} src='/img/laptop.png' />
+                            </a>
+                            :
+                            <Image layout='responsive' alt='laptop' width={100} height={100} src='/img/laptop.png' />}
                     </div>
                     {/* <a href={projects[index].links[1]} className='projectLinkButton' target='_blank'>
                         Visit website
@@ -406,12 +416,12 @@ const Projects = () => {
                         <div className='projectInfo'>
                             <ul>{projects[index].desc?.map((desc, index) => (<li key={index}>{desc}</li>))}</ul>
                         </div>
-                        <div className='projectTags'>
-                            {projects[index].tags?.map((tag, index) => <div key={index} className='projectTag'>{tag}</div>)}
-                        </div>
-
-                        <div >
-                            {/* {projects[index].frontend &&
+                        <div className='projectFooter'>
+                            <div className='projectTags'>
+                                {projects[index].tags?.map((tag, index) => <div key={index} className='projectTag'>{tag}</div>)}
+                            </div>
+                            <div >
+                                {/* {projects[index].frontend &&
                                 <div className='projectTags' style={{ paddingBottom: '10px' }}>
                                     frontend: {projects[index].frontend?.map((tag, index) => <div key={index} className='projectTag'>{tag}</div>)}
                                 </div>
@@ -422,26 +432,16 @@ const Projects = () => {
                                 </div>
                             } */}
 
-                            {projects[index]?.links && <div className='projectLinks'>
-                                <a href={projects[index].links[2]} className='projectLinkIcon' target='_blank'>
-                                    <IoMdLink />
-                                </a>
-                                <a href={projects[index].links[0]} className='projectLinkIcon' target='_blank'>
-                                    <FiGithub />
-                                </a>
-                            </div>}
+                                {projects[index]?.links && <div className='projectLinks'>
+                                    <a href={projects[index].links[2]} className='projectLinkIcon' target='_blank'>
+                                        <IoMdLink />
+                                    </a>
+                                    <a href={projects[index].links[0]} className='projectLinkIcon' target='_blank'>
+                                        <FiGithub />
+                                    </a>
+                                </div>}
+                            </div>
                         </div>
-
-
-                        {/* <div className='projectLinks'>
-                            <a href={projects[index].links[2]} className='projectLinkIcon' target='_blank'>
-                                <IoMdLink />
-                            </a>
-                            <a href={projects[index].links[0]} className='projectLinkIcon' target='_blank'>
-                                <FiGithub />
-                            </a>
-                        </div> */}
-
                     </div>
                 </div>
             </div>

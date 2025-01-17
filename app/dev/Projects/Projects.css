@@ -29,6 +29,7 @@
     min-height: calc(100vw / 2);
     align-items: flex-end;
     display: flex;
+    min-height: 400px;
 }
 
 .projectVideo{
@@ -44,6 +45,11 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
+}
+
+.projectFooter{
+    display: flex;
+    justify-content: space-between;
 }
 
 .scaled{
@@ -129,6 +135,7 @@ margin-top: -20px;
     display: flex;
     gap: 10px;
     justify-content: flex-end;
+    align-self: flex-end;
 }
 
 .projectLinkIcon{
