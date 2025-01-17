@@ -394,12 +394,14 @@ const Projects = () => {
                         </video>
                     </div>
                     <div className='projectImage'>
-                        {projects[index].links ?
+                        {/* {projects[index].links ?
                             <a href={projects[index].links ? projects[index].links[1] : ''} target='_blank'>
                                 <Image layout='responsive' alt='laptop' width={100} height={100} src='/img/laptop.png' />
                             </a>
                             :
-                            <Image layout='responsive' alt='laptop' width={100} height={100} src='/img/laptop.png' />}
+                            <Image layout='responsive' alt='laptop' width={100} height={100} src='/img/laptop.png' />} */}
+                        <Image layout='responsive' alt='laptop' width={100} height={100} src='/img/laptop.png' />
+
                     </div>
                     {/* <a href={projects[index].links[1]} className='projectLinkButton' target='_blank'>
                         Visit website
@@ -433,9 +435,9 @@ const Projects = () => {
                             } */}
 
                                 {projects[index]?.links && <div className='projectLinks'>
-                                    <a href={projects[index].links[2]} className='projectLinkIcon' target='_blank'>
+                                    {/* <a href={projects[index].links[1]} className='projectLinkIcon' target='_blank'>
                                         <IoMdLink />
-                                    </a>
+                                    </a> */}
                                     <a href={projects[index].links[0]} className='projectLinkIcon' target='_blank'>
                                         <FiGithub />
                                     </a>
