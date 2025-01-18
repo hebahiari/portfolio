@@ -26,7 +26,7 @@ const projects = [
         frontend: [],
         backend: [],
         image: "/img/portfolio/7.PNG",
-        gif: "/img/portfolio/gifs/hdx.mov",
+        gif: "/img/portfolio/gifs/hdx.mp4",
     },
 
     {
@@ -63,7 +63,7 @@ const projects = [
         frontend: [],
         backend: [],
         image: "/img/portfolio/11.png",
-        gif: "/img/portfolio/gifs/screenindie.mov",
+        gif: "/img/portfolio/gifs/screenindie.mp4",
     },
 
 
@@ -172,7 +172,7 @@ const projects = [
         frontend: [],
         backend: [],
         image: "/img/portfolio/9.png",
-        gif: "/img/portfolio/gifs/payco.mov",
+        gif: "/img/portfolio/gifs/payco.mp4",
     },
 
 
