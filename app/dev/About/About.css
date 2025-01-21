@@ -29,6 +29,7 @@
 
 .aboutLinks a{
     font-size: 20px;
+    color: white;
     &:hover{
         color: #c8a405;
     }
