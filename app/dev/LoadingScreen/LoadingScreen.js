@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import './LoadingScreen.css';
-import { Typewriter } from "react-simple-typewriter";
 
 function LoadingScreen() {
     const [loading, setLoading] = useState(true);
