@@ -10,6 +10,8 @@ const BULLET_SPEED = 600; // Speed of the bullets
 const INITIAL_LIVES = 3; // Initial number of lives
 const SHOOT_DURATION = 0.3; // Duration for the shoot animation in seconds
 const HIT_DURATION = 0.5; // Duration for the hit animation in seconds
+let worldRecord = 1633
+let won = false
 
 const Game = () => {
 
@@ -55,6 +57,7 @@ const Game = () => {
             ]);
 
             let lives = INITIAL_LIVES;
+            won = false
 
             // Move the player up
             k.onKeyDown("up", () => {
@@ -141,6 +144,88 @@ const Game = () => {
 
             updateHearts();
 
+            // keys:
+
+            k.add([
+                k.text('keys:', {
+                    font: "pixels", // Use the pixel font
+                    size: 24, // Adjust the font size as needed
+                }),
+                k.pos((k.width() / 2) - 95, (k.height() - 30)),
+                k.anchor("center"),
+            ]);
+
+            let downButton = k.add([
+                k.rect(30, 30),
+                k.pos((k.width() / 2) + 1, (k.height() - 30)),
+                k.area(),
+                k.color(0, 0, 0),
+                k.outline(2, k.rgb(255, 255, 255)), // Set the outline color to red
+                k.anchor('center')
+            ]);
+
+            downButton.onClick(() => {
+                if (player.pos.y < k.height() - 70) { // Ensure the player doesn't move below the bottom of the screen
+                    player.move(0, MOVE_SPEED);
+                }
+            })
+
+            k.add([
+                k.text('>', {
+                    font: "pixels", // Use the pixel font
+                    size: 20, // Adjust the font size as needed
+                }),
+                k.rotate(90),
+                k.pos((k.width() / 2) + 1, (k.height() - 30)),
+                k.anchor("center"),
+            ]);
+
+            let upButton = k.add([
+                k.rect(30, 30),
+                k.pos((k.width() / 2) - 40, (k.height() - 30)),
+                k.area(),
+                k.color(0, 0, 0),
+                k.outline(2, k.rgb(255, 255, 255)), // Set the outline color to red
+                k.anchor('center')
+            ]);
+
+            upButton.onClick(() => {
+                if (player.pos.y > 0) { // Ensure the player doesn't move above the top of the screen
+                    player.move(0, -MOVE_SPEED);
+                }
+            })
+
+            k.add([
+                k.text('>', {
+                    font: "pixels", // Use the pixel font
+                    size: 20, // Adjust the font size as needed
+                }),
+                k.rotate(270),
+                k.pos((k.width() / 2) - 40, (k.height() - 30)),
+                k.anchor("center"),
+            ]);
+
+
+            let shootButton = k.add([
+                k.rect(75, 30),
+                k.pos((k.width() / 2) + 65, (k.height() - 30)),
+                k.area(),
+                k.color(0, 0, 0),
+                k.outline(2, k.rgb(255, 255, 255)), // Set the outline color to red
+                k.anchor('center')
+            ]);
+
+            shootButton.onClick(() => shoot())
+
+            k.add([
+                k.text('space', {
+                    font: "pixels", // Use the pixel font
+                    size: 20, // Adjust the font size as needed
+                }),
+                k.pos((k.width() / 2) + 65, (k.height() - 30)),
+                k.anchor("center"),
+            ]);
+
             // Collision detection between bullets and trees
             k.onCollide("bullet", "bug", (bullet, bug) => {
                 k.destroy(bullet);
@@ -202,6 +287,10 @@ const Game = () => {
 
                 if (lives <= 0) {
                     // go to "lose" scene and pass the score
+                    if(score > worldRecord) {
+                        won = true
+                        worldRecord = score
+                    }
                     k.go("lose", score);
                 }
             });
@@ -231,27 +320,57 @@ const Game = () => {
             k.add([
                 k.sprite("hit"),
                 k.pos(k.width() / 2, k.height() / 2 - 80),
-                k.scale(1),
+                k.scale(.8),
                 k.anchor("center"),
             ]);
 
             // display score
             k.add([
-                k.text(score, {
+                k.text(`your score: ${score}`, {
                     font: "pixels", // Use the pixel font
-                    size: 24, // Adjust the font size as needed
+                    size: 20, // Adjust the font size as needed
                 }),
-                k.pos(k.width() / 2, k.height() / 2 + 60),
+                k.pos(k.width() / 2, k.height() / 2 + 80),
                 k.scale(2),
                 k.anchor("center"),
             ]);
+
+            if(won) {
+                k.add([
+                    k.text('you beat the world record!', {
+                        font: "pixels", // Use the pixel font
+                        size: 15, // Adjust the font size as needed
+                    }),
+                    k.pos(k.width() / 2, k.height() / 2 + 25),
+                    k.scale(2),
+                    k.anchor("center"),
+                ]);
+            } else {
+                k.add([
+                    k.text(`world record: ${worldRecord}`, {
+                        font: "pixels", // Use the pixel font
+                        size: 15, // Adjust the font size as needed
+                    }),
+                    k.pos(k.width() / 2, k.height() / 2 + 35),
+                    k.scale(2),
+                    k.anchor("center"),
+                ]);
+            }
+
+            // k.add([
+            //     k.pos(k.width() / 2, k.height() / 2 + 110),
+            //     k.rect(100, 70),
+            //     k.outline(4),
+            //     k.area(),
+            // ])
+           
 
             k.add([
                 k.text('click to restart', {
                     font: "pixels", // Use the pixel font
                     size: 24, // Adjust the font size as needed
                 }),
-                k.pos(k.width() / 2, k.height() / 2 + 110),
+                k.pos(k.width() / 2, k.height() / 2 + 150),
                 k.scale(1.4),
                 k.anchor("center"),
             ]);
